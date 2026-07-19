@@ -1,0 +1,27 @@
+Table,Rule,Column,Issue
+companies,Null Check,Unnamed: 1,1
+companies,Null Check,Unnamed: 5,1
+companies,Null Check,Unnamed: 6,1
+companies,Null Check,Unnamed: 7,1
+companies,Null Check,Unnamed: 8,1
+companies,Null Check,Unnamed: 9,1
+companies,Null Check,Unnamed: 10,1
+companies,Null Check,Unnamed: 11,2
+cashflow,Null Check,Unnamed: 3,2
+cashflow,Null Check,Unnamed: 4,2
+cashflow,Null Check,Unnamed: 5,2
+cashflow,Null Check,Unnamed: 6,2
+profitandloss,Null Check,Unnamed: 5,13
+profitandloss,Null Check,Unnamed: 6,15
+profitandloss,Null Check,Unnamed: 11,95
+profitandloss,Null Check,Unnamed: 13,5
+profitandloss,Null Check,Unnamed: 14,103
+financial_ratios,Null Check,net_profit_margin_pct,1
+financial_ratios,Null Check,operating_profit_margin_pct,61
+financial_ratios,Null Check,interest_coverage,93
+financial_ratios,Null Check,asset_turnover,1
+financial_ratios,Null Check,free_cash_flow_cr,2
+financial_ratios,Null Check,capex_cr,2
+financial_ratios,Null Check,earnings_per_share,4
+financial_ratios,Null Check,dividend_payout_ratio_pct,4
+financial_ratios,Null Check,cash_from_operations_cr,2

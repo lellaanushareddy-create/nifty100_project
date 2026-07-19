@@ -1,0 +1,46 @@
+import csv
+import os
+
+
+def generate_capital_allocation_csv(data):
+    # Create output folder if it doesn't exist
+    os.makedirs("output", exist_ok=True)
+
+    with open("output/capital_allocation.csv", "w", newline="") as file:
+        writer = csv.writer(file)
+
+        # Header
+        writer.writerow([
+            "company_id",
+            "year",
+            "cfo_sign",
+            "cfi_sign",
+            "cff_sign",
+            "pattern_label"
+        ])
+
+        # Data rows
+        for row in data:
+            writer.writerow([
+                row["company_id"],
+                row["year"],
+                row["cfo_sign"],
+                row["cfi_sign"],
+                row["cff_sign"],
+                row["pattern_label"]
+            ])
+
+
+# Example usage
+sample_data = [
+    {
+        "company_id": 101,
+        "year": 2024,
+        "cfo_sign": "+",
+        "cfi_sign": "-",
+        "cff_sign": "-",
+        "pattern_label": "Reinvestor"
+    }
+]
+
+generate_capital_allocation_csv(sample_data)
