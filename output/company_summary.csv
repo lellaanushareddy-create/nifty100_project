@@ -1,0 +1,92 @@
+company_id,pros_count,cons_count,pros,cons,recommendation
+ABB,12,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share; Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,BUY
+ADANIENSOL,3,2,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity; Poor asset utilization,HOLD
+ADANIENT,1,3,Positive Earnings Per Share,Low profit margin; Weak Return on Equity; Negative Free Cash Flow,SELL
+ADANIGREEN,2,2,Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+ADANIPORTS,10,2,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share; Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization; Poor asset utilization,BUY
+ADANIPOWER,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+AMBUJACEM,2,1,Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow,HOLD
+APOLLOHOSP,3,1,Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,Low profit margin,HOLD
+ASIANPAINT,12,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share; Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,BUY
+BAJAJ-AUTO,12,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share; Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,BUY
+AXISBANK,4,2,Strong net profit margin; High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+BAJAJFINSV,3,2,High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+BAJAJHLDNG,4,1,Strong net profit margin; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization,HOLD
+BAJFINANCE,4,2,Strong net profit margin; High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+BANKBARODA,4,2,Strong net profit margin; High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+BHARTIARTL,3,1,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization,HOLD
+BEL,5,1,Strong net profit margin; High Return on Equity; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow,HOLD
+BHEL,1,5,Positive Earnings Per Share,Low profit margin; Weak Return on Equity; Negative Free Cash Flow; Poor asset utilization; Low operating margin,SELL
+BOSCHLTD,3,0,High Return on Equity; Positive Free Cash Flow; Positive Earnings Per Share,,HOLD
+BPCL,4,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+BRITANNIA,5,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+CANBK,3,2,High Return on Equity; Positive Free Cash Flow; Positive Earnings Per Share,Poor asset utilization; Low operating margin,HOLD
+CHOLAFIN,4,2,Strong net profit margin; High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+CIPLA,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+COALINDIA,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+DABUR,4,0,High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+DIVISLAB,4,0,Strong net profit margin; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+DLF,4,2,Strong net profit margin; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity; Poor asset utilization,HOLD
+DMART,3,2,Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,Low profit margin; Low operating margin,HOLD
+DRREDDY,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+EICHERMOT,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+GAIL,3,0,Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+GODREJCP,1,4,Healthy operating margin,Low profit margin; Weak Return on Equity; Negative Free Cash Flow; Negative Earnings Per Share,SELL
+GRASIM,2,2,Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+HAL,6,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+HAVELLS,4,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+HCLTECH,5,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+HDFCBANK,3,2,Strong net profit margin; Positive Free Cash Flow; Positive Earnings Per Share,Poor asset utilization; Low operating margin,HOLD
+HDFCLIFE,2,3,Healthy operating margin; Positive Earnings Per Share,Low profit margin; Negative Free Cash Flow; Poor asset utilization,SELL
+HEROMOTOCO,5,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+HINDALCO,3,2,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Low profit margin; Weak Return on Equity,HOLD
+HINDUNILVR,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+ICICIBANK,4,2,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Positive Earnings Per Share,Poor asset utilization; Low operating margin,HOLD
+ICICIGI,4,1,High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization,HOLD
+ICICIPRULI,2,4,Positive Free Cash Flow; Positive Earnings Per Share,Low profit margin; Weak Return on Equity; Poor asset utilization; Low operating margin,SELL
+INDUSINDBK,3,2,Strong net profit margin; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+INFY,6,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+IOC,4,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+IRCTC,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+IRFC,4,1,Strong net profit margin; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization,HOLD
+ITC,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+JINDALSTEL,2,1,Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow,HOLD
+JIOFIN,4,2,Strong net profit margin; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity; Poor asset utilization,HOLD
+JSWENERGY,3,3,Strong net profit margin; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity; Negative Free Cash Flow; Poor asset utilization,HOLD
+JSWSTEEL,2,1,Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow,HOLD
+KOTAKBANK,3,2,Strong net profit margin; Positive Free Cash Flow; Positive Earnings Per Share,Poor asset utilization; Low operating margin,HOLD
+LICI,3,3,High Return on Equity; Positive Free Cash Flow; Positive Earnings Per Share,Low profit margin; Poor asset utilization; Low operating margin,HOLD
+LODHA,3,3,Strong net profit margin; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity; Negative Free Cash Flow; Poor asset utilization,HOLD
+LT,4,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+LTIM,5,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+M&M,3,1,High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow,HOLD
+MARUTI,4,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+MOTHERSON,3,2,Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,Low profit margin; Low operating margin,HOLD
+NAUKRI,3,3,Strong net profit margin; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity; Negative Free Cash Flow; Poor asset utilization,HOLD
+NESTLEIND,6,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+NHPC,4,1,Strong net profit margin; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization,HOLD
+NTPC,3,1,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization,HOLD
+ONGC,4,0,High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+PFC,4,2,Strong net profit margin; High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+PIDILITIND,5,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+PNB,15,5,High Return on Equity; Efficient asset utilization; Positive Earnings Per Share; High Return on Equity; Efficient asset utilization; Positive Earnings Per Share; High Return on Equity; Efficient asset utilization; Positive Earnings Per Share; High Return on Equity; Efficient asset utilization; Positive Earnings Per Share; High Return on Equity; Efficient asset utilization; Positive Earnings Per Share,Negative Free Cash Flow; Negative Free Cash Flow; Negative Free Cash Flow; Negative Free Cash Flow; Negative Free Cash Flow,HOLD
+POWERGRID,10,2,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share; Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization; Poor asset utilization,BUY
+RECLTD,4,2,Strong net profit margin; High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+RELIANCE,3,1,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity,HOLD
+SBILIFE,1,4,Positive Earnings Per Share,Low profit margin; Negative Free Cash Flow; Poor asset utilization; Low operating margin,SELL
+SHREECEM,3,1,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity,HOLD
+SHRIRAMFIN,4,2,Strong net profit margin; High Return on Equity; Healthy operating margin; Positive Earnings Per Share,Negative Free Cash Flow; Poor asset utilization,HOLD
+SUNPHARMA,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+TATACONSUM,3,1,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Weak Return on Equity,HOLD
+TATAMOTORS,4,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+TATAPOWER,3,1,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,Poor asset utilization,HOLD
+TATASTEEL,1,3,Positive Free Cash Flow,Low profit margin; Weak Return on Equity; Negative Earnings Per Share,SELL
+TCS,6,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+TECHM,6,6,Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,Low profit margin; Weak Return on Equity; Low operating margin; Low profit margin; Weak Return on Equity; Low operating margin,HOLD
+TITAN,4,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Positive Earnings Per Share,,HOLD
+TORNTPHARM,5,0,Strong net profit margin; High Return on Equity; Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+TRENT,5,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD
+TVSMOTOR,2,2,High Return on Equity; Positive Earnings Per Share,Low profit margin; Negative Free Cash Flow,HOLD
+ULTRACEMCO,3,0,Positive Free Cash Flow; Healthy operating margin; Positive Earnings Per Share,,HOLD
+UNIONBANK,2,2,Positive Free Cash Flow; Positive Earnings Per Share,Poor asset utilization; Low operating margin,HOLD
+INDIGO,5,0,High Return on Equity; Positive Free Cash Flow; Efficient asset utilization; Healthy operating margin; Positive Earnings Per Share,,HOLD

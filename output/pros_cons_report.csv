@@ -1,0 +1,498 @@
+company_id,type,rule_id,text,confidence_pct
+ABB,PRO,P001,Strong net profit margin,95
+ABB,PRO,P002,High Return on Equity,95
+ABB,PRO,P003,Positive Free Cash Flow,90
+ABB,PRO,P004,Efficient asset utilization,85
+ABB,PRO,P005,Healthy operating margin,90
+ABB,PRO,P006,Positive Earnings Per Share,80
+ABB,PRO,P001,Strong net profit margin,95
+ABB,PRO,P002,High Return on Equity,95
+ABB,PRO,P003,Positive Free Cash Flow,90
+ABB,PRO,P004,Efficient asset utilization,85
+ABB,PRO,P005,Healthy operating margin,90
+ABB,PRO,P006,Positive Earnings Per Share,80
+ADANIENSOL,PRO,P003,Positive Free Cash Flow,90
+ADANIENSOL,PRO,P005,Healthy operating margin,90
+ADANIENSOL,PRO,P006,Positive Earnings Per Share,80
+ADANIENT,PRO,P006,Positive Earnings Per Share,80
+ADANIGREEN,PRO,P005,Healthy operating margin,90
+ADANIGREEN,PRO,P006,Positive Earnings Per Share,80
+ADANIPORTS,PRO,P001,Strong net profit margin,95
+ADANIPORTS,PRO,P002,High Return on Equity,95
+ADANIPORTS,PRO,P003,Positive Free Cash Flow,90
+ADANIPORTS,PRO,P005,Healthy operating margin,90
+ADANIPORTS,PRO,P006,Positive Earnings Per Share,80
+ADANIPORTS,PRO,P001,Strong net profit margin,95
+ADANIPORTS,PRO,P002,High Return on Equity,95
+ADANIPORTS,PRO,P003,Positive Free Cash Flow,90
+ADANIPORTS,PRO,P005,Healthy operating margin,90
+ADANIPORTS,PRO,P006,Positive Earnings Per Share,80
+ADANIPOWER,PRO,P001,Strong net profit margin,95
+ADANIPOWER,PRO,P002,High Return on Equity,95
+ADANIPOWER,PRO,P003,Positive Free Cash Flow,90
+ADANIPOWER,PRO,P005,Healthy operating margin,90
+ADANIPOWER,PRO,P006,Positive Earnings Per Share,80
+AMBUJACEM,PRO,P005,Healthy operating margin,90
+AMBUJACEM,PRO,P006,Positive Earnings Per Share,80
+APOLLOHOSP,PRO,P003,Positive Free Cash Flow,90
+APOLLOHOSP,PRO,P004,Efficient asset utilization,85
+APOLLOHOSP,PRO,P006,Positive Earnings Per Share,80
+ASIANPAINT,PRO,P001,Strong net profit margin,95
+ASIANPAINT,PRO,P002,High Return on Equity,95
+ASIANPAINT,PRO,P003,Positive Free Cash Flow,90
+ASIANPAINT,PRO,P004,Efficient asset utilization,85
+ASIANPAINT,PRO,P005,Healthy operating margin,90
+ASIANPAINT,PRO,P006,Positive Earnings Per Share,80
+ASIANPAINT,PRO,P001,Strong net profit margin,95
+ASIANPAINT,PRO,P002,High Return on Equity,95
+ASIANPAINT,PRO,P003,Positive Free Cash Flow,90
+ASIANPAINT,PRO,P004,Efficient asset utilization,85
+ASIANPAINT,PRO,P005,Healthy operating margin,90
+ASIANPAINT,PRO,P006,Positive Earnings Per Share,80
+BAJAJ-AUTO,PRO,P001,Strong net profit margin,95
+BAJAJ-AUTO,PRO,P002,High Return on Equity,95
+BAJAJ-AUTO,PRO,P003,Positive Free Cash Flow,90
+BAJAJ-AUTO,PRO,P004,Efficient asset utilization,85
+BAJAJ-AUTO,PRO,P005,Healthy operating margin,90
+BAJAJ-AUTO,PRO,P006,Positive Earnings Per Share,80
+BAJAJ-AUTO,PRO,P001,Strong net profit margin,95
+BAJAJ-AUTO,PRO,P002,High Return on Equity,95
+BAJAJ-AUTO,PRO,P003,Positive Free Cash Flow,90
+BAJAJ-AUTO,PRO,P004,Efficient asset utilization,85
+BAJAJ-AUTO,PRO,P005,Healthy operating margin,90
+BAJAJ-AUTO,PRO,P006,Positive Earnings Per Share,80
+AXISBANK,PRO,P001,Strong net profit margin,95
+AXISBANK,PRO,P002,High Return on Equity,95
+AXISBANK,PRO,P005,Healthy operating margin,90
+AXISBANK,PRO,P006,Positive Earnings Per Share,80
+BAJAJFINSV,PRO,P002,High Return on Equity,95
+BAJAJFINSV,PRO,P005,Healthy operating margin,90
+BAJAJFINSV,PRO,P006,Positive Earnings Per Share,80
+BAJAJHLDNG,PRO,P001,Strong net profit margin,95
+BAJAJHLDNG,PRO,P003,Positive Free Cash Flow,90
+BAJAJHLDNG,PRO,P005,Healthy operating margin,90
+BAJAJHLDNG,PRO,P006,Positive Earnings Per Share,80
+BAJFINANCE,PRO,P001,Strong net profit margin,95
+BAJFINANCE,PRO,P002,High Return on Equity,95
+BAJFINANCE,PRO,P005,Healthy operating margin,90
+BAJFINANCE,PRO,P006,Positive Earnings Per Share,80
+BANKBARODA,PRO,P001,Strong net profit margin,95
+BANKBARODA,PRO,P002,High Return on Equity,95
+BANKBARODA,PRO,P005,Healthy operating margin,90
+BANKBARODA,PRO,P006,Positive Earnings Per Share,80
+BHARTIARTL,PRO,P003,Positive Free Cash Flow,90
+BHARTIARTL,PRO,P005,Healthy operating margin,90
+BHARTIARTL,PRO,P006,Positive Earnings Per Share,80
+BEL,PRO,P001,Strong net profit margin,95
+BEL,PRO,P002,High Return on Equity,95
+BEL,PRO,P004,Efficient asset utilization,85
+BEL,PRO,P005,Healthy operating margin,90
+BEL,PRO,P006,Positive Earnings Per Share,80
+BHEL,PRO,P006,Positive Earnings Per Share,80
+BOSCHLTD,PRO,P002,High Return on Equity,95
+BOSCHLTD,PRO,P003,Positive Free Cash Flow,90
+BOSCHLTD,PRO,P006,Positive Earnings Per Share,80
+BPCL,PRO,P002,High Return on Equity,95
+BPCL,PRO,P003,Positive Free Cash Flow,90
+BPCL,PRO,P004,Efficient asset utilization,85
+BPCL,PRO,P006,Positive Earnings Per Share,80
+BRITANNIA,PRO,P002,High Return on Equity,95
+BRITANNIA,PRO,P003,Positive Free Cash Flow,90
+BRITANNIA,PRO,P004,Efficient asset utilization,85
+BRITANNIA,PRO,P005,Healthy operating margin,90
+BRITANNIA,PRO,P006,Positive Earnings Per Share,80
+CANBK,PRO,P002,High Return on Equity,95
+CANBK,PRO,P003,Positive Free Cash Flow,90
+CANBK,PRO,P006,Positive Earnings Per Share,80
+CHOLAFIN,PRO,P001,Strong net profit margin,95
+CHOLAFIN,PRO,P002,High Return on Equity,95
+CHOLAFIN,PRO,P005,Healthy operating margin,90
+CHOLAFIN,PRO,P006,Positive Earnings Per Share,80
+CIPLA,PRO,P001,Strong net profit margin,95
+CIPLA,PRO,P002,High Return on Equity,95
+CIPLA,PRO,P003,Positive Free Cash Flow,90
+CIPLA,PRO,P005,Healthy operating margin,90
+CIPLA,PRO,P006,Positive Earnings Per Share,80
+COALINDIA,PRO,P001,Strong net profit margin,95
+COALINDIA,PRO,P002,High Return on Equity,95
+COALINDIA,PRO,P003,Positive Free Cash Flow,90
+COALINDIA,PRO,P005,Healthy operating margin,90
+COALINDIA,PRO,P006,Positive Earnings Per Share,80
+DABUR,PRO,P002,High Return on Equity,95
+DABUR,PRO,P003,Positive Free Cash Flow,90
+DABUR,PRO,P005,Healthy operating margin,90
+DABUR,PRO,P006,Positive Earnings Per Share,80
+DIVISLAB,PRO,P001,Strong net profit margin,95
+DIVISLAB,PRO,P003,Positive Free Cash Flow,90
+DIVISLAB,PRO,P005,Healthy operating margin,90
+DIVISLAB,PRO,P006,Positive Earnings Per Share,80
+DLF,PRO,P001,Strong net profit margin,95
+DLF,PRO,P003,Positive Free Cash Flow,90
+DLF,PRO,P005,Healthy operating margin,90
+DLF,PRO,P006,Positive Earnings Per Share,80
+DMART,PRO,P003,Positive Free Cash Flow,90
+DMART,PRO,P004,Efficient asset utilization,85
+DMART,PRO,P006,Positive Earnings Per Share,80
+DRREDDY,PRO,P001,Strong net profit margin,95
+DRREDDY,PRO,P002,High Return on Equity,95
+DRREDDY,PRO,P003,Positive Free Cash Flow,90
+DRREDDY,PRO,P005,Healthy operating margin,90
+DRREDDY,PRO,P006,Positive Earnings Per Share,80
+EICHERMOT,PRO,P001,Strong net profit margin,95
+EICHERMOT,PRO,P002,High Return on Equity,95
+EICHERMOT,PRO,P003,Positive Free Cash Flow,90
+EICHERMOT,PRO,P005,Healthy operating margin,90
+EICHERMOT,PRO,P006,Positive Earnings Per Share,80
+GAIL,PRO,P003,Positive Free Cash Flow,90
+GAIL,PRO,P004,Efficient asset utilization,85
+GAIL,PRO,P006,Positive Earnings Per Share,80
+GODREJCP,PRO,P005,Healthy operating margin,90
+GRASIM,PRO,P005,Healthy operating margin,90
+GRASIM,PRO,P006,Positive Earnings Per Share,80
+HAL,PRO,P001,Strong net profit margin,95
+HAL,PRO,P002,High Return on Equity,95
+HAL,PRO,P003,Positive Free Cash Flow,90
+HAL,PRO,P004,Efficient asset utilization,85
+HAL,PRO,P005,Healthy operating margin,90
+HAL,PRO,P006,Positive Earnings Per Share,80
+HAVELLS,PRO,P002,High Return on Equity,95
+HAVELLS,PRO,P003,Positive Free Cash Flow,90
+HAVELLS,PRO,P004,Efficient asset utilization,85
+HAVELLS,PRO,P006,Positive Earnings Per Share,80
+HCLTECH,PRO,P002,High Return on Equity,95
+HCLTECH,PRO,P003,Positive Free Cash Flow,90
+HCLTECH,PRO,P004,Efficient asset utilization,85
+HCLTECH,PRO,P005,Healthy operating margin,90
+HCLTECH,PRO,P006,Positive Earnings Per Share,80
+HDFCBANK,PRO,P001,Strong net profit margin,95
+HDFCBANK,PRO,P003,Positive Free Cash Flow,90
+HDFCBANK,PRO,P006,Positive Earnings Per Share,80
+HDFCLIFE,PRO,P005,Healthy operating margin,90
+HDFCLIFE,PRO,P006,Positive Earnings Per Share,80
+HEROMOTOCO,PRO,P002,High Return on Equity,95
+HEROMOTOCO,PRO,P003,Positive Free Cash Flow,90
+HEROMOTOCO,PRO,P004,Efficient asset utilization,85
+HEROMOTOCO,PRO,P005,Healthy operating margin,90
+HEROMOTOCO,PRO,P006,Positive Earnings Per Share,80
+HINDALCO,PRO,P003,Positive Free Cash Flow,90
+HINDALCO,PRO,P005,Healthy operating margin,90
+HINDALCO,PRO,P006,Positive Earnings Per Share,80
+HINDUNILVR,PRO,P001,Strong net profit margin,95
+HINDUNILVR,PRO,P002,High Return on Equity,95
+HINDUNILVR,PRO,P003,Positive Free Cash Flow,90
+HINDUNILVR,PRO,P005,Healthy operating margin,90
+HINDUNILVR,PRO,P006,Positive Earnings Per Share,80
+ICICIBANK,PRO,P001,Strong net profit margin,95
+ICICIBANK,PRO,P002,High Return on Equity,95
+ICICIBANK,PRO,P003,Positive Free Cash Flow,90
+ICICIBANK,PRO,P006,Positive Earnings Per Share,80
+ICICIGI,PRO,P002,High Return on Equity,95
+ICICIGI,PRO,P003,Positive Free Cash Flow,90
+ICICIGI,PRO,P005,Healthy operating margin,90
+ICICIGI,PRO,P006,Positive Earnings Per Share,80
+ICICIPRULI,PRO,P003,Positive Free Cash Flow,90
+ICICIPRULI,PRO,P006,Positive Earnings Per Share,80
+INDUSINDBK,PRO,P001,Strong net profit margin,95
+INDUSINDBK,PRO,P005,Healthy operating margin,90
+INDUSINDBK,PRO,P006,Positive Earnings Per Share,80
+INFY,PRO,P001,Strong net profit margin,95
+INFY,PRO,P002,High Return on Equity,95
+INFY,PRO,P003,Positive Free Cash Flow,90
+INFY,PRO,P004,Efficient asset utilization,85
+INFY,PRO,P005,Healthy operating margin,90
+INFY,PRO,P006,Positive Earnings Per Share,80
+IOC,PRO,P002,High Return on Equity,95
+IOC,PRO,P003,Positive Free Cash Flow,90
+IOC,PRO,P004,Efficient asset utilization,85
+IOC,PRO,P006,Positive Earnings Per Share,80
+IRCTC,PRO,P001,Strong net profit margin,95
+IRCTC,PRO,P002,High Return on Equity,95
+IRCTC,PRO,P003,Positive Free Cash Flow,90
+IRCTC,PRO,P005,Healthy operating margin,90
+IRCTC,PRO,P006,Positive Earnings Per Share,80
+IRFC,PRO,P001,Strong net profit margin,95
+IRFC,PRO,P003,Positive Free Cash Flow,90
+IRFC,PRO,P005,Healthy operating margin,90
+IRFC,PRO,P006,Positive Earnings Per Share,80
+ITC,PRO,P001,Strong net profit margin,95
+ITC,PRO,P002,High Return on Equity,95
+ITC,PRO,P003,Positive Free Cash Flow,90
+ITC,PRO,P005,Healthy operating margin,90
+ITC,PRO,P006,Positive Earnings Per Share,80
+JINDALSTEL,PRO,P005,Healthy operating margin,90
+JINDALSTEL,PRO,P006,Positive Earnings Per Share,80
+JIOFIN,PRO,P001,Strong net profit margin,95
+JIOFIN,PRO,P003,Positive Free Cash Flow,90
+JIOFIN,PRO,P005,Healthy operating margin,90
+JIOFIN,PRO,P006,Positive Earnings Per Share,80
+JSWENERGY,PRO,P001,Strong net profit margin,95
+JSWENERGY,PRO,P005,Healthy operating margin,90
+JSWENERGY,PRO,P006,Positive Earnings Per Share,80
+JSWSTEEL,PRO,P005,Healthy operating margin,90
+JSWSTEEL,PRO,P006,Positive Earnings Per Share,80
+KOTAKBANK,PRO,P001,Strong net profit margin,95
+KOTAKBANK,PRO,P003,Positive Free Cash Flow,90
+KOTAKBANK,PRO,P006,Positive Earnings Per Share,80
+LICI,PRO,P002,High Return on Equity,95
+LICI,PRO,P003,Positive Free Cash Flow,90
+LICI,PRO,P006,Positive Earnings Per Share,80
+LODHA,PRO,P001,Strong net profit margin,95
+LODHA,PRO,P005,Healthy operating margin,90
+LODHA,PRO,P006,Positive Earnings Per Share,80
+LT,PRO,P002,High Return on Equity,95
+LT,PRO,P003,Positive Free Cash Flow,90
+LT,PRO,P004,Efficient asset utilization,85
+LT,PRO,P006,Positive Earnings Per Share,80
+LTIM,PRO,P002,High Return on Equity,95
+LTIM,PRO,P003,Positive Free Cash Flow,90
+LTIM,PRO,P004,Efficient asset utilization,85
+LTIM,PRO,P005,Healthy operating margin,90
+LTIM,PRO,P006,Positive Earnings Per Share,80
+M&M,PRO,P002,High Return on Equity,95
+M&M,PRO,P005,Healthy operating margin,90
+M&M,PRO,P006,Positive Earnings Per Share,80
+MARUTI,PRO,P002,High Return on Equity,95
+MARUTI,PRO,P003,Positive Free Cash Flow,90
+MARUTI,PRO,P004,Efficient asset utilization,85
+MARUTI,PRO,P006,Positive Earnings Per Share,80
+MOTHERSON,PRO,P003,Positive Free Cash Flow,90
+MOTHERSON,PRO,P004,Efficient asset utilization,85
+MOTHERSON,PRO,P006,Positive Earnings Per Share,80
+NAUKRI,PRO,P001,Strong net profit margin,95
+NAUKRI,PRO,P005,Healthy operating margin,90
+NAUKRI,PRO,P006,Positive Earnings Per Share,80
+NESTLEIND,PRO,P001,Strong net profit margin,95
+NESTLEIND,PRO,P002,High Return on Equity,95
+NESTLEIND,PRO,P003,Positive Free Cash Flow,90
+NESTLEIND,PRO,P004,Efficient asset utilization,85
+NESTLEIND,PRO,P005,Healthy operating margin,90
+NESTLEIND,PRO,P006,Positive Earnings Per Share,80
+NHPC,PRO,P001,Strong net profit margin,95
+NHPC,PRO,P003,Positive Free Cash Flow,90
+NHPC,PRO,P005,Healthy operating margin,90
+NHPC,PRO,P006,Positive Earnings Per Share,80
+NTPC,PRO,P003,Positive Free Cash Flow,90
+NTPC,PRO,P005,Healthy operating margin,90
+NTPC,PRO,P006,Positive Earnings Per Share,80
+ONGC,PRO,P002,High Return on Equity,95
+ONGC,PRO,P003,Positive Free Cash Flow,90
+ONGC,PRO,P005,Healthy operating margin,90
+ONGC,PRO,P006,Positive Earnings Per Share,80
+PFC,PRO,P001,Strong net profit margin,95
+PFC,PRO,P002,High Return on Equity,95
+PFC,PRO,P005,Healthy operating margin,90
+PFC,PRO,P006,Positive Earnings Per Share,80
+PIDILITIND,PRO,P002,High Return on Equity,95
+PIDILITIND,PRO,P003,Positive Free Cash Flow,90
+PIDILITIND,PRO,P004,Efficient asset utilization,85
+PIDILITIND,PRO,P005,Healthy operating margin,90
+PIDILITIND,PRO,P006,Positive Earnings Per Share,80
+PNB,PRO,P002,High Return on Equity,95
+PNB,PRO,P004,Efficient asset utilization,85
+PNB,PRO,P006,Positive Earnings Per Share,80
+PNB,PRO,P002,High Return on Equity,95
+PNB,PRO,P004,Efficient asset utilization,85
+PNB,PRO,P006,Positive Earnings Per Share,80
+PNB,PRO,P002,High Return on Equity,95
+PNB,PRO,P004,Efficient asset utilization,85
+PNB,PRO,P006,Positive Earnings Per Share,80
+PNB,PRO,P002,High Return on Equity,95
+PNB,PRO,P004,Efficient asset utilization,85
+PNB,PRO,P006,Positive Earnings Per Share,80
+PNB,PRO,P002,High Return on Equity,95
+PNB,PRO,P004,Efficient asset utilization,85
+PNB,PRO,P006,Positive Earnings Per Share,80
+POWERGRID,PRO,P001,Strong net profit margin,95
+POWERGRID,PRO,P002,High Return on Equity,95
+POWERGRID,PRO,P003,Positive Free Cash Flow,90
+POWERGRID,PRO,P005,Healthy operating margin,90
+POWERGRID,PRO,P006,Positive Earnings Per Share,80
+POWERGRID,PRO,P001,Strong net profit margin,95
+POWERGRID,PRO,P002,High Return on Equity,95
+POWERGRID,PRO,P003,Positive Free Cash Flow,90
+POWERGRID,PRO,P005,Healthy operating margin,90
+POWERGRID,PRO,P006,Positive Earnings Per Share,80
+RECLTD,PRO,P001,Strong net profit margin,95
+RECLTD,PRO,P002,High Return on Equity,95
+RECLTD,PRO,P005,Healthy operating margin,90
+RECLTD,PRO,P006,Positive Earnings Per Share,80
+RELIANCE,PRO,P003,Positive Free Cash Flow,90
+RELIANCE,PRO,P005,Healthy operating margin,90
+RELIANCE,PRO,P006,Positive Earnings Per Share,80
+SBILIFE,PRO,P006,Positive Earnings Per Share,80
+SHREECEM,PRO,P003,Positive Free Cash Flow,90
+SHREECEM,PRO,P005,Healthy operating margin,90
+SHREECEM,PRO,P006,Positive Earnings Per Share,80
+SHRIRAMFIN,PRO,P001,Strong net profit margin,95
+SHRIRAMFIN,PRO,P002,High Return on Equity,95
+SHRIRAMFIN,PRO,P005,Healthy operating margin,90
+SHRIRAMFIN,PRO,P006,Positive Earnings Per Share,80
+SUNPHARMA,PRO,P001,Strong net profit margin,95
+SUNPHARMA,PRO,P002,High Return on Equity,95
+SUNPHARMA,PRO,P003,Positive Free Cash Flow,90
+SUNPHARMA,PRO,P005,Healthy operating margin,90
+SUNPHARMA,PRO,P006,Positive Earnings Per Share,80
+TATACONSUM,PRO,P003,Positive Free Cash Flow,90
+TATACONSUM,PRO,P005,Healthy operating margin,90
+TATACONSUM,PRO,P006,Positive Earnings Per Share,80
+TATAMOTORS,PRO,P002,High Return on Equity,95
+TATAMOTORS,PRO,P003,Positive Free Cash Flow,90
+TATAMOTORS,PRO,P004,Efficient asset utilization,85
+TATAMOTORS,PRO,P006,Positive Earnings Per Share,80
+TATAPOWER,PRO,P003,Positive Free Cash Flow,90
+TATAPOWER,PRO,P005,Healthy operating margin,90
+TATAPOWER,PRO,P006,Positive Earnings Per Share,80
+TATASTEEL,PRO,P003,Positive Free Cash Flow,90
+TCS,PRO,P001,Strong net profit margin,95
+TCS,PRO,P002,High Return on Equity,95
+TCS,PRO,P003,Positive Free Cash Flow,90
+TCS,PRO,P004,Efficient asset utilization,85
+TCS,PRO,P005,Healthy operating margin,90
+TCS,PRO,P006,Positive Earnings Per Share,80
+TECHM,PRO,P003,Positive Free Cash Flow,90
+TECHM,PRO,P004,Efficient asset utilization,85
+TECHM,PRO,P006,Positive Earnings Per Share,80
+TECHM,PRO,P003,Positive Free Cash Flow,90
+TECHM,PRO,P004,Efficient asset utilization,85
+TECHM,PRO,P006,Positive Earnings Per Share,80
+TITAN,PRO,P002,High Return on Equity,95
+TITAN,PRO,P003,Positive Free Cash Flow,90
+TITAN,PRO,P004,Efficient asset utilization,85
+TITAN,PRO,P006,Positive Earnings Per Share,80
+TORNTPHARM,PRO,P001,Strong net profit margin,95
+TORNTPHARM,PRO,P002,High Return on Equity,95
+TORNTPHARM,PRO,P003,Positive Free Cash Flow,90
+TORNTPHARM,PRO,P005,Healthy operating margin,90
+TORNTPHARM,PRO,P006,Positive Earnings Per Share,80
+TRENT,PRO,P002,High Return on Equity,95
+TRENT,PRO,P003,Positive Free Cash Flow,90
+TRENT,PRO,P004,Efficient asset utilization,85
+TRENT,PRO,P005,Healthy operating margin,90
+TRENT,PRO,P006,Positive Earnings Per Share,80
+TVSMOTOR,PRO,P002,High Return on Equity,95
+TVSMOTOR,PRO,P006,Positive Earnings Per Share,80
+ULTRACEMCO,PRO,P003,Positive Free Cash Flow,90
+ULTRACEMCO,PRO,P005,Healthy operating margin,90
+ULTRACEMCO,PRO,P006,Positive Earnings Per Share,80
+UNIONBANK,PRO,P003,Positive Free Cash Flow,90
+UNIONBANK,PRO,P006,Positive Earnings Per Share,80
+INDIGO,PRO,P002,High Return on Equity,95
+INDIGO,PRO,P003,Positive Free Cash Flow,90
+INDIGO,PRO,P004,Efficient asset utilization,85
+INDIGO,PRO,P005,Healthy operating margin,90
+INDIGO,PRO,P006,Positive Earnings Per Share,80
+ADANIENSOL,CON,C002,Weak Return on Equity,90
+ADANIENSOL,CON,C004,Poor asset utilization,85
+ADANIENT,CON,C001,Low profit margin,90
+ADANIENT,CON,C002,Weak Return on Equity,90
+ADANIENT,CON,C003,Negative Free Cash Flow,95
+ADANIGREEN,CON,C003,Negative Free Cash Flow,95
+ADANIGREEN,CON,C004,Poor asset utilization,85
+ADANIPORTS,CON,C004,Poor asset utilization,85
+ADANIPORTS,CON,C004,Poor asset utilization,85
+AMBUJACEM,CON,C003,Negative Free Cash Flow,95
+APOLLOHOSP,CON,C001,Low profit margin,90
+AXISBANK,CON,C003,Negative Free Cash Flow,95
+AXISBANK,CON,C004,Poor asset utilization,85
+BAJAJFINSV,CON,C003,Negative Free Cash Flow,95
+BAJAJFINSV,CON,C004,Poor asset utilization,85
+BAJAJHLDNG,CON,C004,Poor asset utilization,85
+BAJFINANCE,CON,C003,Negative Free Cash Flow,95
+BAJFINANCE,CON,C004,Poor asset utilization,85
+BANKBARODA,CON,C003,Negative Free Cash Flow,95
+BANKBARODA,CON,C004,Poor asset utilization,85
+BHARTIARTL,CON,C004,Poor asset utilization,85
+BEL,CON,C003,Negative Free Cash Flow,95
+BHEL,CON,C001,Low profit margin,90
+BHEL,CON,C002,Weak Return on Equity,90
+BHEL,CON,C003,Negative Free Cash Flow,95
+BHEL,CON,C004,Poor asset utilization,85
+BHEL,CON,C005,Low operating margin,90
+CANBK,CON,C004,Poor asset utilization,85
+CANBK,CON,C005,Low operating margin,90
+CHOLAFIN,CON,C003,Negative Free Cash Flow,95
+CHOLAFIN,CON,C004,Poor asset utilization,85
+DLF,CON,C002,Weak Return on Equity,90
+DLF,CON,C004,Poor asset utilization,85
+DMART,CON,C001,Low profit margin,90
+DMART,CON,C005,Low operating margin,90
+GODREJCP,CON,C001,Low profit margin,90
+GODREJCP,CON,C002,Weak Return on Equity,90
+GODREJCP,CON,C003,Negative Free Cash Flow,95
+GODREJCP,CON,C006,Negative Earnings Per Share,90
+GRASIM,CON,C003,Negative Free Cash Flow,95
+GRASIM,CON,C004,Poor asset utilization,85
+HDFCBANK,CON,C004,Poor asset utilization,85
+HDFCBANK,CON,C005,Low operating margin,90
+HDFCLIFE,CON,C001,Low profit margin,90
+HDFCLIFE,CON,C003,Negative Free Cash Flow,95
+HDFCLIFE,CON,C004,Poor asset utilization,85
+HINDALCO,CON,C001,Low profit margin,90
+HINDALCO,CON,C002,Weak Return on Equity,90
+ICICIBANK,CON,C004,Poor asset utilization,85
+ICICIBANK,CON,C005,Low operating margin,90
+ICICIGI,CON,C004,Poor asset utilization,85
+ICICIPRULI,CON,C001,Low profit margin,90
+ICICIPRULI,CON,C002,Weak Return on Equity,90
+ICICIPRULI,CON,C004,Poor asset utilization,85
+ICICIPRULI,CON,C005,Low operating margin,90
+INDUSINDBK,CON,C003,Negative Free Cash Flow,95
+INDUSINDBK,CON,C004,Poor asset utilization,85
+IRFC,CON,C004,Poor asset utilization,85
+JINDALSTEL,CON,C003,Negative Free Cash Flow,95
+JIOFIN,CON,C002,Weak Return on Equity,90
+JIOFIN,CON,C004,Poor asset utilization,85
+JSWENERGY,CON,C002,Weak Return on Equity,90
+JSWENERGY,CON,C003,Negative Free Cash Flow,95
+JSWENERGY,CON,C004,Poor asset utilization,85
+JSWSTEEL,CON,C003,Negative Free Cash Flow,95
+KOTAKBANK,CON,C004,Poor asset utilization,85
+KOTAKBANK,CON,C005,Low operating margin,90
+LICI,CON,C001,Low profit margin,90
+LICI,CON,C004,Poor asset utilization,85
+LICI,CON,C005,Low operating margin,90
+LODHA,CON,C002,Weak Return on Equity,90
+LODHA,CON,C003,Negative Free Cash Flow,95
+LODHA,CON,C004,Poor asset utilization,85
+M&M,CON,C003,Negative Free Cash Flow,95
+MOTHERSON,CON,C001,Low profit margin,90
+MOTHERSON,CON,C005,Low operating margin,90
+NAUKRI,CON,C002,Weak Return on Equity,90
+NAUKRI,CON,C003,Negative Free Cash Flow,95
+NAUKRI,CON,C004,Poor asset utilization,85
+NHPC,CON,C004,Poor asset utilization,85
+NTPC,CON,C004,Poor asset utilization,85
+PFC,CON,C003,Negative Free Cash Flow,95
+PFC,CON,C004,Poor asset utilization,85
+PNB,CON,C003,Negative Free Cash Flow,95
+PNB,CON,C003,Negative Free Cash Flow,95
+PNB,CON,C003,Negative Free Cash Flow,95
+PNB,CON,C003,Negative Free Cash Flow,95
+PNB,CON,C003,Negative Free Cash Flow,95
+POWERGRID,CON,C004,Poor asset utilization,85
+POWERGRID,CON,C004,Poor asset utilization,85
+RECLTD,CON,C003,Negative Free Cash Flow,95
+RECLTD,CON,C004,Poor asset utilization,85
+RELIANCE,CON,C002,Weak Return on Equity,90
+SBILIFE,CON,C001,Low profit margin,90
+SBILIFE,CON,C003,Negative Free Cash Flow,95
+SBILIFE,CON,C004,Poor asset utilization,85
+SBILIFE,CON,C005,Low operating margin,90
+SHREECEM,CON,C002,Weak Return on Equity,90
+SHRIRAMFIN,CON,C003,Negative Free Cash Flow,95
+SHRIRAMFIN,CON,C004,Poor asset utilization,85
+TATACONSUM,CON,C002,Weak Return on Equity,90
+TATAPOWER,CON,C004,Poor asset utilization,85
+TATASTEEL,CON,C001,Low profit margin,90
+TATASTEEL,CON,C002,Weak Return on Equity,90
+TATASTEEL,CON,C006,Negative Earnings Per Share,90
+TECHM,CON,C001,Low profit margin,90
+TECHM,CON,C002,Weak Return on Equity,90
+TECHM,CON,C005,Low operating margin,90
+TECHM,CON,C001,Low profit margin,90
+TECHM,CON,C002,Weak Return on Equity,90
+TECHM,CON,C005,Low operating margin,90
+TVSMOTOR,CON,C001,Low profit margin,90
+TVSMOTOR,CON,C003,Negative Free Cash Flow,95
+UNIONBANK,CON,C004,Poor asset utilization,85
+UNIONBANK,CON,C005,Low operating margin,90
