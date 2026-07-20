@@ -257,6 +257,11 @@ Sprint 4 completed successfully.
 Sprint 5
 Complete Day 29 NLP analysis parser and parsed output generation
 
+## Day 30 completed
+ NLP — Auto Pros/Cons Generator completed
+
+
+
 
 
 
