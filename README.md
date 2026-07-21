@@ -261,8 +261,25 @@ Complete Day 29 NLP analysis parser and parsed output generation
  NLP — Auto Pros/Cons Generator completed
 
 ## Day 31 completed
-git add .
+
  Cash Flow KPI analysis
+
+## Day 32 completed
+
+capital allocation report
+
+## Day 33 completed
+
+pdf tearsheets template
+
+## Day 34 completed
+
+batch report generation
+
+## Day 35 completed
+
+portfolio summary report
+
 
 
 
