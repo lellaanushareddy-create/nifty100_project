@@ -260,6 +260,11 @@ Complete Day 29 NLP analysis parser and parsed output generation
 ## Day 30 completed
  NLP — Auto Pros/Cons Generator completed
 
+## Day 31 completed
+git add .
+ Cash Flow KPI analysis
+
+
 
 
 
