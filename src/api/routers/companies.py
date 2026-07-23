@@ -202,3 +202,36 @@ def get_company_tearsheet(ticker: str):
         filename=f"{ticker}.pdf",
         media_type="application/pdf"
     )
+
+@router.get("/companies/{ticker}/peers/compare")
+def compare_peers(ticker: str):
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    cursor = conn.cursor()
+
+    query = """
+    SELECT
+        company_id,
+        year,
+        return_on_equity_pct,
+        net_profit_margin_pct,
+        debt_to_equity,
+        asset_turnover,
+        earnings_per_share,
+        free_cash_flow_cr,
+        capex_cr,
+        dividend_payout_ratio_pct
+    FROM financial_ratios
+    WHERE company_id = ?
+    ORDER BY year DESC
+    """
+
+    cursor.execute(query, (ticker,))
+    rows = cursor.fetchall()
+
+    conn.close()
+
+    if not rows:
+        return {"error": "Company not found"}
+
+    return [dict(row) for row in rows]
