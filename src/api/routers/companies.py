@@ -47,3 +47,158 @@ def get_company(ticker: str):
         return {"error": "Company not found"}
 
     return dict(company)
+
+@router.get("/companies/{ticker}/pl")
+def get_company_pl(
+    ticker: str,
+    from_year: int | None = None,
+    to_year: int | None = None,
+):
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+
+    cursor = conn.cursor()
+
+    query = """
+        SELECT *
+        FROM profitandloss
+        WHERE company_id = ?
+    """
+
+    params = [ticker]
+
+    if from_year is not None:
+        query += " AND year >= ?"
+        params.append(from_year)
+
+    if to_year is not None:
+        query += " AND year <= ?"
+        params.append(to_year)
+
+    query += " ORDER BY year"
+
+    cursor.execute(query, params)
+
+    data = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+
+    return data
+
+@router.get("/companies/{ticker}/bs")
+def get_company_bs(
+    ticker: str,
+    from_year: int | None = None,
+    to_year: int | None = None,
+):
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+
+    cursor = conn.cursor()
+
+    query = """
+        SELECT *
+        FROM balancesheet
+        WHERE company_id = ?
+    """
+
+    params = [ticker]
+
+    if from_year is not None:
+        query += " AND year >= ?"
+        params.append(from_year)
+
+    if to_year is not None:
+        query += " AND year <= ?"
+        params.append(to_year)
+
+    query += " ORDER BY year"
+
+    cursor.execute(query, params)
+
+    data = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+
+    return data
+
+@router.get("/companies/{ticker}/cashflow")
+def get_company_cashflow(
+    ticker: str,
+    from_year: int | None = None,
+    to_year: int | None = None,
+):
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+
+    cursor = conn.cursor()
+
+    query = """
+        SELECT *
+        FROM cashflow
+        WHERE company_id = ?
+    """
+
+    params = [ticker]
+
+    if from_year is not None:
+        query += " AND year >= ?"
+        params.append(from_year)
+
+    if to_year is not None:
+        query += " AND year <= ?"
+        params.append(to_year)
+
+    query += " ORDER BY year"
+
+    cursor.execute(query, params)
+
+    data = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+
+    return data
+
+@router.get("/companies/{ticker}/ratios")
+def get_company_ratios(
+    ticker: str,
+    year: int | None = None,
+):
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+
+    cursor = conn.cursor()
+
+    query = """
+        SELECT *
+        FROM financial_ratios
+        WHERE company_id = ?
+    """
+
+    params = [ticker]
+
+    if year is not None:
+        query += " AND year = ?"
+        params.append(year)
+
+    query += " ORDER BY year"
+
+    cursor.execute(query, params)
+
+    data = [dict(row) for row in cursor.fetchall()]
+    conn.close()
+
+    return data
+
+from fastapi.responses import FileResponse
+from pathlib import Path
+
+@router.get("/companies/{ticker}/tearsheet")
+def get_company_tearsheet(ticker: str):
+    file_path = Path(f"output/tearsheets/{ticker}.pdf")
+
+    if not file_path.exists():
+        return {"error": "Tearsheet not found"}
+
+    return FileResponse(
+        path=file_path,
+        filename=f"{ticker}.pdf",
+        media_type="application/pdf"
+    )
