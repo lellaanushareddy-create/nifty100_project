@@ -359,6 +359,11 @@ docs/analyst_guide.pdf
 ## Author
 Nifty100 Analytics Project
 
+## DAY 45 completed
+
+final deliverables and project documentation"
+
+
 
 
 
