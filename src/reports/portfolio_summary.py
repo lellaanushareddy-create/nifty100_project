@@ -1,6 +1,7 @@
 from pathlib import Path
-from reportlab.platypus import SimpleDocTemplate, Paragraph
+
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph, SimpleDocTemplate
 
 BASE = Path(__file__).resolve().parents[2]
 

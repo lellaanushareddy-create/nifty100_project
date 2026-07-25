@@ -1,9 +1,9 @@
-import sys
 import os
+import sys
 
 sys.path.append(os.getcwd())
 
-from src.loader import normalize_year, normalize_ticker
+from src.loader import normalize_ticker, normalize_year
 
 
 def test_normalize_year_int():

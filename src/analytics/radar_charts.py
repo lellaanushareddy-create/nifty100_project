@@ -1,8 +1,9 @@
 import os
 import sqlite3
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # -------------------------------
 # Database Connection
@@ -20,20 +21,11 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 # -------------------------------
 # Load Tables
 # -------------------------------
-financial_data = pd.read_sql(
-    "SELECT * FROM financial_data",
-    conn
-)
+financial_data = pd.read_sql("SELECT * FROM financial_data", conn)
 
-financial_ratios = pd.read_sql(
-    "SELECT * FROM financial_ratios",
-    conn
-)
+financial_ratios = pd.read_sql("SELECT * FROM financial_ratios", conn)
 
-peer_percentiles = pd.read_sql(
-    "SELECT * FROM peer_percentiles",
-    conn
-)
+peer_percentiles = pd.read_sql("SELECT * FROM peer_percentiles", conn)
 
 print("Financial Data :", financial_data.shape)
 print("Financial Ratios :", financial_ratios.shape)
@@ -48,7 +40,7 @@ metrics = [
     "debt_to_equity",
     "revenue_cagr_5yr",
     "pat_cagr_5yr",
-    "composite_quality_score"
+    "composite_quality_score",
 ]
 
 # Keep only metrics that actually exist
@@ -60,12 +52,12 @@ print("Radar Metrics:", metrics)
 # Merge company data
 # -------------------------------
 merged_df = financial_ratios.merge(
-    financial_data[["company_id", "year"]],
-    on=["company_id", "year"],
-    how="left"
+    financial_data[["company_id", "year"]], on=["company_id", "year"], how="left"
 )
 
 print("Merged Shape:", merged_df.shape)
+
+
 # -----------------------------------------
 # Radar Chart Function
 # -----------------------------------------
@@ -91,22 +83,17 @@ def create_radar_chart(company_name, values):
 
     ax.set_title(company_name, fontsize=14)
 
-    filename = os.path.join(
-        OUTPUT_DIR,
-        f"{company_name.replace(' ', '_')}_radar.png"
-    )
+    filename = os.path.join(OUTPUT_DIR, f"{company_name.replace(' ', '_')}_radar.png")
 
     plt.savefig(filename, dpi=300, bbox_inches="tight")
     plt.close(fig)
+
+
 # -----------------------------------------
 # Generate Radar Charts
 # -----------------------------------------
 
-latest_data = (
-    merged_df.sort_values("year")
-    .groupby("company_id")
-    .tail(1)
-)
+latest_data = merged_df.sort_values("year").groupby("company_id").tail(1)
 
 print(f"Generating radar charts for {len(latest_data)} companies...")
 

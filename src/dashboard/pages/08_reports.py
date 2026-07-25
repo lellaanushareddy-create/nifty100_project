@@ -1,12 +1,7 @@
 import streamlit as st
-import pandas as pd
 from utils import db
 
-st.set_page_config(
-    page_title="Reports",
-    page_icon="📄",
-    layout="wide"
-)
+st.set_page_config(page_title="Reports", page_icon="📄", layout="wide")
 
 st.title("📄 Reports")
 

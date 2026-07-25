@@ -1,4 +1,3 @@
-import pandas as pd
 import yaml
 
 
@@ -21,15 +20,10 @@ def apply_filters(df):
         df = df[df["net_profit_margin_pct"] >= filters["net_profit_min"]]
 
     df["composite_quality_score"] = (
-        df.select_dtypes(include="number")
-        .fillna(0)
-        .sum(axis=1)
+        df.select_dtypes(include="number").fillna(0).sum(axis=1)
     )
 
-    return df.sort_values(
-        by="composite_quality_score",
-        ascending=False
-    )
+    return df.sort_values(by="composite_quality_score", ascending=False)
 
 
 PRESETS = {

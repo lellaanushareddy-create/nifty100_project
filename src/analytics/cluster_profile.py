@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 # Project folders
 ROOT = Path(__file__).resolve().parents[2]
@@ -12,20 +13,14 @@ features = [
     "return_on_equity_pct",
     "debt_to_equity",
     "operating_profit_margin_pct",
-    "compounded_sales_growth"
+    "compounded_sales_growth",
 ]
 
 # Mean
-cluster_mean = (
-    cluster_df.groupby("cluster")[features]
-    .mean(numeric_only=True)
-)
+cluster_mean = cluster_df.groupby("cluster")[features].mean(numeric_only=True)
 
 # Median
-cluster_median = (
-    cluster_df.groupby("cluster")[features]
-    .median(numeric_only=True)
-)
+cluster_median = cluster_df.groupby("cluster")[features].median(numeric_only=True)
 
 print("Cluster Mean")
 print(cluster_mean)
@@ -38,12 +33,7 @@ cluster_median.to_csv(OUTPUT / "cluster_median.csv")
 
 print("Cluster profiling completed.")
 
-cluster_names = {
-    0: "High Quality",
-    1: "Value",
-    2: "Growth",
-    3: "Turnaround"
-}
+cluster_names = {0: "High Quality", 1: "Value", 2: "Growth", 3: "Turnaround"}
 
 cluster_df["cluster_name"] = cluster_df["cluster"].map(cluster_names)
 

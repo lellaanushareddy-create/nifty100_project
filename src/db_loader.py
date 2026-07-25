@@ -1,6 +1,7 @@
-import pandas as pd
-import sqlite3
 import os
+import sqlite3
+
+import pandas as pd
 
 # -------------------------------
 # Database configuration
@@ -22,7 +23,7 @@ files = {
     "financial_ratios": "financial_ratios.xlsx",
     "peer_groups": "peer_groups.xlsx",
     "sectors": "sectors.xlsx",
-    "analysis": "analysis.xlsx"
+    "analysis": "analysis.xlsx",
 }
 
 audit = []
@@ -44,20 +45,10 @@ for table, file in files.items():
         df = pd.read_excel(path)
 
     # Clean column names
-    df.columns = (
-        df.columns.astype(str)
-        .str.strip()
-        .str.lower()
-        .str.replace(" ", "_")
-    )
+    df.columns = df.columns.astype(str).str.strip().str.lower().str.replace(" ", "_")
 
     # Save into SQLite
-    df.to_sql(
-        table,
-        conn,
-        if_exists="replace",
-        index=False
-    )
+    df.to_sql(table, conn, if_exists="replace", index=False)
 
     audit.append([table, len(df)])
 
@@ -66,15 +57,9 @@ for table, file in files.items():
 # Save audit report
 os.makedirs("output", exist_ok=True)
 
-audit_df = pd.DataFrame(
-    audit,
-    columns=["table_name", "row_count"]
-)
+audit_df = pd.DataFrame(audit, columns=["table_name", "row_count"])
 
-audit_df.to_csv(
-    "output/load_audit.csv",
-    index=False
-)
+audit_df.to_csv("output/load_audit.csv", index=False)
 
 conn.close()
 

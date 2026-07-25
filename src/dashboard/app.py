@@ -4,7 +4,7 @@ st.set_page_config(
     page_title="Nifty100 Analytics",
     page_icon="📈",
     layout="wide",
-    initial_sidebar_state="expanded"
+    initial_sidebar_state="expanded",
 )
 
 st.sidebar.title("Nifty100 Analytics")
@@ -19,8 +19,8 @@ page = st.sidebar.radio(
         "📈 Trends",
         "🏭 Sectors",
         "💰 Capital",
-        "📄 Reports"
-    ]
+        "📄 Reports",
+    ],
 )
 
 st.title(page)

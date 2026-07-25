@@ -1,6 +1,7 @@
 from pathlib import Path
-import pandas as pd
+
 import matplotlib.pyplot as plt
+import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "output"
@@ -9,11 +10,7 @@ REPORTS.mkdir(exist_ok=True)
 
 df = pd.read_excel(OUTPUT / "cluster_results.xlsx")
 
-features = [
-    "return_on_equity_pct",
-    "debt_to_equity",
-    "operating_profit_margin_pct"
-]
+features = ["return_on_equity_pct", "debt_to_equity", "operating_profit_margin_pct"]
 
 corr = df[features].corr()
 
@@ -26,8 +23,7 @@ plt.yticks(range(len(features)), features)
 
 for i in range(len(features)):
     for j in range(len(features)):
-        plt.text(j, i, f"{corr.iloc[i, j]:.2f}",
-                 ha="center", va="center")
+        plt.text(j, i, f"{corr.iloc[i, j]:.2f}", ha="center", va="center")
 
 plt.tight_layout()
 plt.savefig(REPORTS / "correlation_heatmap.png")

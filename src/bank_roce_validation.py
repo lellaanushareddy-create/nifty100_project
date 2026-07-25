@@ -1,19 +1,14 @@
 import sqlite3
+
 import pandas as pd
 
 # Connect to the database
 conn = sqlite3.connect("db/nifty100.db")
 
 # Read the tables
-financial_data = pd.read_sql(
-    "SELECT * FROM financial_data",
-    conn
-)
+financial_data = pd.read_sql("SELECT * FROM financial_data", conn)
 
-financial_ratios = pd.read_sql(
-    "SELECT * FROM financial_ratios",
-    conn
-)
+financial_ratios = pd.read_sql("SELECT * FROM financial_ratios", conn)
 
 print("===== FINANCIAL DATA =====")
 print(financial_data.head())
@@ -24,8 +19,7 @@ print(financial_ratios.head())
 # Check if required columns exist
 if "broad_sector" in financial_data.columns:
     banks = financial_data[
-        financial_data["broad_sector"]
-        .str.contains("Financial", case=False, na=False)
+        financial_data["broad_sector"].str.contains("Financial", case=False, na=False)
     ]
 
     print("\n===== FINANCIAL SECTOR COMPANIES =====")
@@ -38,11 +32,11 @@ else:
 with open("output/ratio_edge_cases.log", "w") as f:
     f.write("Day 13 - Bank ROCE Carve-Out & Edge Case Log\n")
     f.write("=" * 50 + "\n\n")
-    f.write("Financial data records: {}\n".format(len(financial_data)))
-    f.write("Financial ratios records: {}\n".format(len(financial_ratios)))
+    f.write(f"Financial data records: {len(financial_data)}\n")
+    f.write(f"Financial ratios records: {len(financial_ratios)}\n")
 
     if "broad_sector" in financial_data.columns:
-        f.write("Financial sector companies: {}\n".format(len(banks)))
+        f.write(f"Financial sector companies: {len(banks)}\n")
 
     f.write("\nReview completed successfully.\n")
 

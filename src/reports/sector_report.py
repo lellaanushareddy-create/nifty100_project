@@ -1,8 +1,9 @@
 from pathlib import Path
+
 import pandas as pd
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph, SimpleDocTemplate, Table, TableStyle
 
 BASE = Path(__file__).resolve().parents[2]
 
@@ -45,9 +46,7 @@ for sector in sorted(df[sector_col].dropna().unique()):
     doc = SimpleDocTemplate(str(pdf_file))
     elements = []
 
-    elements.append(
-        Paragraph(f"<b>Sector Report : {sector}</b>", styles["Title"])
-    )
+    elements.append(Paragraph(f"<b>Sector Report : {sector}</b>", styles["Title"]))
 
     elements.append(
         Paragraph(f"Total Companies : {len(sector_df)}", styles["Heading2"])
@@ -60,13 +59,17 @@ for sector in sorted(df[sector_col].dropna().unique()):
 
     table = Table(data)
 
-    table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.darkblue),
-        ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
-        ("GRID", (0, 0), (-1, -1), 1, colors.black),
-        ("BACKGROUND", (0, 1), (-1, -1), colors.beige),
-        ("BOTTOMPADDING", (0, 0), (-1, 0), 8),
-    ]))
+    table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, 0), colors.darkblue),
+                ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
+                ("GRID", (0, 0), (-1, -1), 1, colors.black),
+                ("BACKGROUND", (0, 1), (-1, -1), colors.beige),
+                ("BOTTOMPADDING", (0, 0), (-1, 0), 8),
+            ]
+        )
+    )
 
     elements.append(table)
 

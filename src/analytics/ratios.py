@@ -29,6 +29,7 @@ def roa(net_profit, total_assets):
         return None
     return (net_profit / total_assets) * 100
 
+
 def debt_to_equity(borrowings, equity_capital, reserves):
     if borrowings == 0:
         return 0

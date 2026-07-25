@@ -1,4 +1,5 @@
 import pandas as pd
+
 from src.nlp.analyzer import analyze_text
 
 
@@ -7,8 +8,7 @@ def main():
     file_path = "data/raw/analysis.xlsx"
 
     # Read Excel
-    df = pd.read_excel(file_path,header=1)
-
+    df = pd.read_excel(file_path, header=1)
 
     # Show available columns
     print("Columns found:")
@@ -31,11 +31,7 @@ def main():
 
     # Parse each column
     for col in columns_to_parse:
-        df[col + "_parsed"] = (
-            df[col]
-            .astype(str)
-            .apply(analyze_text)
-        )
+        df[col + "_parsed"] = df[col].astype(str).apply(analyze_text)
 
     # Print first 10 rows
     print(df.head(10))

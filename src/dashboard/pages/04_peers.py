@@ -20,19 +20,13 @@ if not groups:
     st.warning("No peer groups available.")
     st.stop()
 
-selected_group = st.selectbox(
-    "Select Peer Group",
-    groups
-)
+selected_group = st.selectbox("Select Peer Group", groups)
 
 # -------------------------------
 # Load Data
 # -------------------------------
 try:
-    df = db.get_peer_metrics(
-        selected_group,
-        selected_year
-    )
+    df = db.get_peer_metrics(selected_group, selected_year)
 except Exception as e:
     st.error(f"Error loading peer data: {e}")
     st.stop()
@@ -46,10 +40,7 @@ if df.empty:
 # -------------------------------
 st.subheader(f"Peer Group: {selected_group}")
 
-st.dataframe(
-    df,
-    use_container_width=True
-)
+st.dataframe(df, use_container_width=True)
 
 # -------------------------------
 # Download CSV
@@ -57,8 +48,5 @@ st.dataframe(
 csv = df.to_csv(index=False)
 
 st.download_button(
-    label="⬇ Download CSV",
-    data=csv,
-    file_name="peer_comparison.csv",
-    mime="text/csv"
+    label="⬇ Download CSV", data=csv, file_name="peer_comparison.csv", mime="text/csv"
 )

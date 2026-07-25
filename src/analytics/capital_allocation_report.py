@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 BASE = Path(__file__).resolve().parents[2]
 
@@ -15,24 +16,20 @@ distribution = (
 )
 
 distribution.to_csv(
-    BASE / "output" / "capital_allocation_distribution.csv",
-    index=False
+    BASE / "output" / "capital_allocation_distribution.csv", index=False
 )
 
 pattern_changes = capital.sort_values(["company_id", "year"])
 
-pattern_changes["previous_pattern"] = (
-    pattern_changes.groupby("company_id")["pattern_label"].shift(1)
-)
+pattern_changes["previous_pattern"] = pattern_changes.groupby("company_id")[
+    "pattern_label"
+].shift(1)
 
 pattern_changes = pattern_changes[
     pattern_changes["pattern_label"] != pattern_changes["previous_pattern"]
 ]
 
-pattern_changes.to_csv(
-    BASE / "output" / "pattern_changes.csv",
-    index=False
-)
+pattern_changes.to_csv(BASE / "output" / "pattern_changes.csv", index=False)
 
 print("Saved:")
 print(BASE / "output" / "capital_allocation_distribution.csv")

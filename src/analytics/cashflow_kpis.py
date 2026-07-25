@@ -1,6 +1,7 @@
 import sqlite3
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 BASE_DIR = Path(__file__).resolve().parents[2]
 DB = BASE_DIR / "db" / "nifty100.db"
@@ -50,22 +51,14 @@ cashflow = cashflow.drop_duplicates(subset=["company_id", "year"], keep="first")
 
 # Merge financial ratios and cashflow
 df = cashflow.merge(
-    financial[
-        [
-            "company_id",
-            "year",
-            "cash_from_operations_cr"
-        ]
-    ],
+    financial[["company_id", "year", "cash_from_operations_cr"]],
     on=["company_id", "year"],
-    how="left"
+    how="left",
 )
 
 # CFO Quality Score
-df["cfo_quality_score"] = (
-    df["operating_activity"] /
-    df["cash_from_operations_cr"]
-)
+df["cfo_quality_score"] = df["operating_activity"] / df["cash_from_operations_cr"]
+
 
 # CFO Label
 def label(score):
@@ -78,18 +71,21 @@ def label(score):
     else:
         return "Weak"
 
+
 df["cfo_quality_label"] = df["cfo_quality_score"].apply(label)
 
 print("\nCash Flow KPI Report\n")
 
-result = df[[
-    "company_id",
-    "year",
-    "operating_activity",
-    "cash_from_operations_cr",
-    "cfo_quality_score",
-    "cfo_quality_label"
-]]
+result = df[
+    [
+        "company_id",
+        "year",
+        "operating_activity",
+        "cash_from_operations_cr",
+        "cfo_quality_score",
+        "cfo_quality_label",
+    ]
+]
 
 print(result.head(20).to_string(index=False))
 
@@ -101,4 +97,3 @@ print("\nSaved:")
 print(OUTPUT / "cashflow_kpi_report.csv")
 
 conn.close()
-

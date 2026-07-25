@@ -1,13 +1,17 @@
-import pandas as pd
 import os
+
+import pandas as pd
+
 
 # Normalize Year
 def normalize_year(year):
     return str(year).strip()
 
+
 # Normalize Ticker
 def normalize_ticker(ticker):
     return str(ticker).upper().strip()
+
 
 # Data folder path
 data_folder = "data/raw"
@@ -22,59 +26,34 @@ else:
 
     for file in files:
 
-        file_path = os.path.join(
-            data_folder,
-            file
-        )
+        file_path = os.path.join(data_folder, file)
 
         try:
 
-            df = pd.read_excel(
-                file_path
-            )
+            df = pd.read_excel(file_path)
 
             # Normalize year
             if "year" in df.columns:
 
-                df["year"] = (
-                    df["year"]
-                    .apply(
-                        normalize_year
-                    )
-                )
+                df["year"] = df["year"].apply(normalize_year)
 
             # Normalize ticker
             if "ticker" in df.columns:
 
-                df["ticker"] = (
-                    df["ticker"]
-                    .apply(
-                        normalize_ticker
-                    )
-                )
+                df["ticker"] = df["ticker"].apply(normalize_ticker)
 
             print("\n=================")
             print(f"Loaded: {file}")
-            print(
-                f"Rows: {len(df)}"
-            )
+            print(f"Rows: {len(df)}")
 
-            print(
-                f"Columns: {len(df.columns)}"
-            )
+            print(f"Columns: {len(df.columns)}")
 
-            print(
-                df.columns.tolist()
-            )
+            print(df.columns.tolist())
 
-            print(
-                df.head()
-            )
+            print(df.head())
 
         except Exception as e:
 
-            print(
-                f"Error reading {file}: {e}"
-            )
+            print(f"Error reading {file}: {e}")
 
 print("\nData ingestion complete.")

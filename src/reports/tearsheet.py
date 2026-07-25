@@ -3,11 +3,11 @@ from pathlib import Path
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import (
+    Paragraph,
     SimpleDocTemplate,
+    Spacer,
     Table,
     TableStyle,
-    Paragraph,
-    Spacer,
 )
 
 BASE = Path(__file__).resolve().parents[2]
@@ -22,20 +22,21 @@ elements = []
 
 # ---------------- Header ----------------
 
-header = Table(
-    [["TCS (TCS.NS)"]],
-    colWidths=[520]
-)
+header = Table([["TCS (TCS.NS)"]], colWidths=[520])
 
-header.setStyle(TableStyle([
-    ("BACKGROUND", (0, 0), (-1, -1), colors.navy),
-    ("TEXTCOLOR", (0, 0), (-1, -1), colors.white),
-    ("FONTNAME", (0, 0), (-1, -1), "Helvetica-Bold"),
-    ("FONTSIZE", (0, 0), (-1, -1), 18),
-    ("ALIGN", (0, 0), (-1, -1), "CENTER"),
-    ("TOPPADDING", (0, 0), (-1, -1), 12),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 12),
-]))
+header.setStyle(
+    TableStyle(
+        [
+            ("BACKGROUND", (0, 0), (-1, -1), colors.navy),
+            ("TEXTCOLOR", (0, 0), (-1, -1), colors.white),
+            ("FONTNAME", (0, 0), (-1, -1), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, -1), 18),
+            ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+            ("TOPPADDING", (0, 0), (-1, -1), 12),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 12),
+        ]
+    )
+)
 
 elements.append(header)
 elements.append(Spacer(1, 20))
@@ -49,19 +50,23 @@ kpi_table = Table(
         ["ROCE", "EPS", "Debt/Equity"],
         ["31%", "₹95", "0.18"],
     ],
-    colWidths=[170, 170, 170]
+    colWidths=[170, 170, 170],
 )
 
-kpi_table.setStyle(TableStyle([
-    ("GRID", (0, 0), (-1, -1), 1, colors.grey),
-    ("BACKGROUND", (0, 0), (-1, -1), colors.beige),
-    ("ALIGN", (0, 0), (-1, -1), "CENTER"),
-    ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
-    ("FONTNAME", (0, 0), (-1, -1), "Helvetica-Bold"),
-    ("FONTSIZE", (0, 0), (-1, -1), 12),
-    ("TOPPADDING", (0, 0), (-1, -1), 10),
-    ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
-]))
+kpi_table.setStyle(
+    TableStyle(
+        [
+            ("GRID", (0, 0), (-1, -1), 1, colors.grey),
+            ("BACKGROUND", (0, 0), (-1, -1), colors.beige),
+            ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+            ("VALIGN", (0, 0), (-1, -1), "MIDDLE"),
+            ("FONTNAME", (0, 0), (-1, -1), "Helvetica-Bold"),
+            ("FONTSIZE", (0, 0), (-1, -1), 12),
+            ("TOPPADDING", (0, 0), (-1, -1), 10),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+        ]
+    )
+)
 
 elements.append(kpi_table)
 elements.append(Spacer(1, 20))

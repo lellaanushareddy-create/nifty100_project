@@ -4,7 +4,7 @@ samples = [
     "Sales growth 18% over 5 Years",
     "Profit CAGR 25.4% over 10 Years",
     "ROE is 21%",
-    "No percentage here"
+    "No percentage here",
 ]
 
 for text in samples:

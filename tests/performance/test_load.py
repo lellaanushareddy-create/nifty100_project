@@ -1,16 +1,19 @@
 import threading
 import time
+
 import requests
 
 URL = "http://127.0.0.1:8000/screener?min_roe=15"
 
 results = []
 
+
 def call_api():
     start = time.time()
     response = requests.get(URL)
     end = time.time()
     results.append((response.status_code, end - start))
+
 
 threads = []
 start = time.time()

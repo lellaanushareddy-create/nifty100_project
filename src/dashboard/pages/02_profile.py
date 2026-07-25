@@ -1,7 +1,6 @@
-import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
-
+import streamlit as st
 from utils import db
 
 st.set_page_config(page_title="Company Profile | Nifty 100 Analytics", layout="wide")
@@ -49,9 +48,15 @@ else:
     k1, k2, k3, k4, k5, k6 = st.columns(6)
     k1.metric("ROE", f"{kpis['roe']:.2f}%" if kpis["roe"] is not None else "—")
     k2.metric("ROCE", f"{kpis['roce']:.2f}%" if kpis["roce"] is not None else "—")
-    k3.metric("Net Profit Margin", f"{kpis['net_margin']:.2f}%" if kpis["net_margin"] is not None else "—")
+    k3.metric(
+        "Net Profit Margin",
+        f"{kpis['net_margin']:.2f}%" if kpis["net_margin"] is not None else "—",
+    )
     k4.metric("D/E", f"{kpis['de']:.2f}" if kpis["de"] is not None else "—")
-    k5.metric("Revenue CAGR (5yr)", f"{kpis['rev_cagr_5yr']:.2f}%" if kpis["rev_cagr_5yr"] is not None else "—")
+    k5.metric(
+        "Revenue CAGR (5yr)",
+        f"{kpis['rev_cagr_5yr']:.2f}%" if kpis["rev_cagr_5yr"] is not None else "—",
+    )
     k6.metric("FCF (₹ Cr)", f"{kpis['fcf']:.2f}" if kpis["fcf"] is not None else "—")
 
 st.divider()
@@ -80,8 +85,12 @@ if ratio_df.empty:
     st.info("No 10-year ROE/ROCE history available.")
 else:
     fig_line = go.Figure()
-    fig_line.add_trace(go.Scatter(x=ratio_df["year"], y=ratio_df["roe"], name="ROE (%)", yaxis="y1"))
-    fig_line.add_trace(go.Scatter(x=ratio_df["year"], y=ratio_df["roce"], name="ROCE (%)", yaxis="y2"))
+    fig_line.add_trace(
+        go.Scatter(x=ratio_df["year"], y=ratio_df["roe"], name="ROE (%)", yaxis="y1")
+    )
+    fig_line.add_trace(
+        go.Scatter(x=ratio_df["year"], y=ratio_df["roce"], name="ROCE (%)", yaxis="y2")
+    )
     fig_line.update_layout(
         yaxis=dict(title="ROE (%)"),
         yaxis2=dict(title="ROCE (%)", overlaying="y", side="right"),

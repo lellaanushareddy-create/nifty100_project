@@ -280,6 +280,85 @@ batch report generation
 
 portfolio summary report
 
+## dAY 44 completed
+
+# Nifty100 Analytics Dashboard
+
+## Project Overview
+Nifty100 Analytics is a stock market analytics dashboard built using Streamlit, FastAPI, SQLite, and Python. It provides financial analysis, screening, company profiles, peer comparison, sector analysis, capital allocation insights, and reports for Nifty 100 companies.
+
+## Features
+- Home Dashboard
+- Company Profile
+- Stock Screener
+- Peer Comparison
+- Trend Analysis
+- Sector Analysis
+- Capital Allocation
+- Reports
+- FastAPI Backend
+- SQLite Database
+
+## Technology Stack
+- Python
+- Streamlit
+- FastAPI
+- SQLite
+- Pandas
+- Plotly
+
+## Project Structure
+```
+src/
+db/
+data/
+docs/
+output/
+tests/
+README.md
+requirements.txt
+```
+
+## Setup
+
+### Clone Repository
+```bash
+git clone <repository-url>
+cd nifty100_project
+```
+
+### Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### Run ETL
+```bash
+python import_excel.py
+```
+
+### Run Streamlit Dashboard
+```bash
+streamlit run app.py
+```
+
+### Run FastAPI
+```bash
+uvicorn src.api:app --reload
+```
+
+## Testing
+Run the validation scripts inside the `tests/` folder.
+
+## Documentation
+The analyst guide is available in:
+```
+docs/analyst_guide.pdf
+```
+
+## Author
+Nifty100 Analytics Project
+
 
 
 

@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 BASE = Path(__file__).resolve().parents[2]
 
@@ -13,6 +14,7 @@ capital["cfo_sign"] = capital["cash_from_operations_cr"].apply(
 
 capital["cfi_sign"] = "+"
 capital["cff_sign"] = "+"
+
 
 def classify(row):
     cfo = row["cfo_sign"]

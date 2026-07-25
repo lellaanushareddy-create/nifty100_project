@@ -1,7 +1,8 @@
 from pathlib import Path
+
 import pandas as pd
-from reportlab.platypus import SimpleDocTemplate, Paragraph
 from reportlab.lib.styles import getSampleStyleSheet
+from reportlab.platypus import Paragraph, SimpleDocTemplate
 
 BASE = Path(__file__).resolve().parents[2]
 
@@ -44,8 +45,7 @@ for _, row in companies.iterrows():
     generated += 1
 
 pd.DataFrame({"Skipped": skipped}).to_csv(
-    BASE / "output" / "skipped_tearsheets.csv",
-    index=False
+    BASE / "output" / "skipped_tearsheets.csv", index=False
 )
 
 print(f"Generated {generated} tear sheets.")

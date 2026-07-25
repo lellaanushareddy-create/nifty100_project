@@ -33,10 +33,7 @@ def calculate_composite_score(df):
 
     df["composite_score"] = score.round(2)
 
-    return df.sort_values(
-        by="composite_score",
-        ascending=False
-    )
+    return df.sort_values(by="composite_score", ascending=False)
 
 
 if __name__ == "__main__":

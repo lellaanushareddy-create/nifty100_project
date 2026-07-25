@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 # ----------------------------
 # Paths
@@ -10,6 +11,7 @@ INPUT_DIR = BASE_DIR / "input"
 OUTPUT_DIR = BASE_DIR / "output"
 
 OUTPUT_DIR.mkdir(exist_ok=True)
+
 
 # ----------------------------
 # Load Data
@@ -42,22 +44,11 @@ def prepare_latest_data(df):
 # ----------------------------
 def calculate_sector_median(df):
 
-    sector_median = (
-        df.groupby("broad_sector")["pe_ratio"]
-        .median()
-        .reset_index()
-    )
+    sector_median = df.groupby("broad_sector")["pe_ratio"].median().reset_index()
 
-    sector_median.rename(
-        columns={"pe_ratio": "sector_median_pe"},
-        inplace=True
-    )
+    sector_median.rename(columns={"pe_ratio": "sector_median_pe"}, inplace=True)
 
-    df = df.merge(
-        sector_median,
-        on="broad_sector",
-        how="left"
-    )
+    df = df.merge(sector_median, on="broad_sector", how="left")
 
     return df
 
@@ -69,15 +60,9 @@ def add_flags(df):
 
     df["valuation_flag"] = "Fair"
 
-    df.loc[
-        df["pe_ratio"] > df["sector_median_pe"] * 1.5,
-        "valuation_flag"
-    ] = "Caution"
+    df.loc[df["pe_ratio"] > df["sector_median_pe"] * 1.5, "valuation_flag"] = "Caution"
 
-    df.loc[
-        df["pe_ratio"] < df["sector_median_pe"] * 0.7,
-        "valuation_flag"
-    ] = "Discount"
+    df.loc[df["pe_ratio"] < df["sector_median_pe"] * 0.7, "valuation_flag"] = "Discount"
 
     return df
 
@@ -103,19 +88,11 @@ def save_outputs(df):
 
     summary = df[summary_columns]
 
-    summary.to_excel(
-        OUTPUT_DIR / "valuation_summary.xlsx",
-        index=False
-    )
+    summary.to_excel(OUTPUT_DIR / "valuation_summary.xlsx", index=False)
 
-    flags = summary[
-        summary["valuation_flag"] != "Fair"
-    ]
+    flags = summary[summary["valuation_flag"] != "Fair"]
 
-    flags.to_csv(
-        OUTPUT_DIR / "valuation_flags.csv",
-        index=False
-    )
+    flags.to_csv(OUTPUT_DIR / "valuation_flags.csv", index=False)
 
     print("\nFiles Generated Successfully")
     print("valuation_summary.xlsx")
@@ -136,9 +113,7 @@ def run():
     latest_df = prepare_latest_data(market_df)
 
     latest_df = latest_df.merge(
-        sector_df[["company_id", "broad_sector"]],
-        on="company_id",
-        how="left"
+        sector_df[["company_id", "broad_sector"]], on="company_id", how="left"
     )
 
     latest_df = calculate_sector_median(latest_df)

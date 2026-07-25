@@ -1,5 +1,6 @@
-import pandas as pd
 import sqlite3
+
+import pandas as pd
 
 conn = sqlite3.connect("db/nifty100.db")
 
@@ -39,9 +40,7 @@ df["eps_cagr_5yr"] = 10
 
 # Composite score (simple)
 df["composite_quality_score"] = (
-    df["return_on_equity_pct"]
-    - df["debt_to_equity"]
-    + df["net_profit_margin_pct"]
+    df["return_on_equity_pct"] - df["debt_to_equity"] + df["net_profit_margin_pct"]
 )
 
 # ----------------------------

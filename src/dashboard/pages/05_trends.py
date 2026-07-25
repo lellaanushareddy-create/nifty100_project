@@ -1,12 +1,8 @@
-import streamlit as st
 import plotly.express as px
+import streamlit as st
 from utils import db
 
-st.set_page_config(
-    page_title="Trend Analysis",
-    page_icon="📈",
-    layout="wide"
-)
+st.set_page_config(page_title="Trend Analysis", page_icon="📈", layout="wide")
 
 st.title("📈 Trend Analysis")
 
@@ -16,15 +12,9 @@ st.title("📈 Trend Analysis")
 
 companies = db.get_company_list()
 
-company_name = st.selectbox(
-    "Select Company",
-    companies["company_name"].tolist()
-)
+company_name = st.selectbox("Select Company", companies["company_name"].tolist())
 
-company_id = companies.loc[
-    companies["company_name"] == company_name,
-    "id"
-].iloc[0]
+company_id = companies.loc[companies["company_name"] == company_name, "id"].iloc[0]
 
 # ---------------------------------------------------
 # Load trend data
@@ -47,14 +37,11 @@ metrics = [
     "ROE",
     "Net Margin",
     "Debt to Equity",
-    "Free Cash Flow"
+    "Free Cash Flow",
 ]
 
 selected_metrics = st.multiselect(
-    "Select Metrics (Max 3)",
-    metrics,
-    default=["Revenue"],
-    max_selections=3
+    "Select Metrics (Max 3)", metrics, default=["Revenue"], max_selections=3
 )
 
 if len(selected_metrics) == 0:
@@ -66,11 +53,7 @@ if len(selected_metrics) == 0:
 # ---------------------------------------------------
 
 fig = px.line(
-    df,
-    x="year",
-    y=selected_metrics,
-    markers=True,
-    title="10-Year Financial Trend"
+    df, x="year", y=selected_metrics, markers=True, title="10-Year Financial Trend"
 )
 
 # ---------------------------------------------------
@@ -83,18 +66,18 @@ for metric in selected_metrics:
 
     for i in range(1, len(values)):
 
-        if values[i-1] in [0, None]:
+        if values[i - 1] in [0, None]:
             continue
 
         try:
-            yoy = ((values[i] - values[i-1]) / values[i-1]) * 100
+            yoy = ((values[i] - values[i - 1]) / values[i - 1]) * 100
 
             fig.add_annotation(
                 x=df.iloc[i]["year"],
                 y=values[i],
                 text=f"{yoy:.1f}%",
                 showarrow=False,
-                font=dict(size=9)
+                font=dict(size=9),
             )
 
         except Exception:
@@ -106,7 +89,7 @@ fig.update_layout(
     legend_title="Metrics",
     hovermode="x unified",
     template="plotly_white",
-    height=650
+    height=650,
 )
 
 st.plotly_chart(fig, use_container_width=True)
@@ -117,7 +100,4 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.subheader("Financial Data")
 
-st.dataframe(
-    df,
-    use_container_width=True
-)
+st.dataframe(df, use_container_width=True)

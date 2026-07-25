@@ -72,5 +72,5 @@ def capital_allocation_pattern(cfo, cfi, cff, cfo_pat_ratio=None):
         "cfo_sign": cfo_sign,
         "cfi_sign": cfi_sign,
         "cff_sign": cff_sign,
-        "pattern_label": label
+        "pattern_label": label,
     }

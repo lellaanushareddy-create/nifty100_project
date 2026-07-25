@@ -1,5 +1,6 @@
-import pandas as pd
 import os
+
+import pandas as pd
 
 # Load Excel files
 companies = pd.read_excel("data/raw/companies.xlsx")
@@ -27,14 +28,7 @@ def validate(df, table_name):
 
         if null_count > 0:
 
-            validation_errors.append(
-                [
-                    table_name,
-                    "Null Check",
-                    col,
-                    null_count
-                ]
-            )
+            validation_errors.append([table_name, "Null Check", col, null_count])
 
     # Duplicate check
     duplicate_count = df.duplicated().sum()
@@ -42,12 +36,7 @@ def validate(df, table_name):
     if duplicate_count > 0:
 
         validation_errors.append(
-            [
-                table_name,
-                "Duplicate Check",
-                "all_columns",
-                duplicate_count
-            ]
+            [table_name, "Duplicate Check", "all_columns", duplicate_count]
         )
 
 
@@ -70,12 +59,7 @@ if "company_id" in companies.columns:
     if companies["company_id"].nunique() != len(companies):
 
         validation_errors.append(
-            [
-                "companies",
-                "Unique Check",
-                "company_id",
-                "duplicate ids"
-            ]
+            ["companies", "Unique Check", "company_id", "duplicate ids"]
         )
 
 
@@ -84,21 +68,10 @@ os.makedirs("output", exist_ok=True)
 
 
 # Create report
-report = pd.DataFrame(
-    validation_errors,
-    columns=[
-        "Table",
-        "Rule",
-        "Column",
-        "Issue"
-    ]
-)
+report = pd.DataFrame(validation_errors, columns=["Table", "Rule", "Column", "Issue"])
 
 # Save CSV
-report.to_csv(
-    "output/validation_failures.csv",
-    index=False
-)
+report.to_csv("output/validation_failures.csv", index=False)
 
 print("Validation completed")
 print(report)

@@ -1,13 +1,10 @@
+import os
 import re
 import sqlite3
 from contextlib import contextmanager
+from pathlib import Path
 
 import pandas as pd
-from pathlib import Path
-from pathlib import Path
-
-from pathlib import Path
-import os
 
 DB_PATH = Path.cwd() / "db" / "nifty100.db"
 
@@ -17,6 +14,7 @@ print("Database Path:", DB_PATH)
 print("Database Exists:", DB_PATH.exists())
 print("=" * 50)
 
+
 @contextmanager
 def get_connection():
     conn = sqlite3.connect(DB_PATH)
@@ -24,6 +22,7 @@ def get_connection():
         yield conn
     finally:
         conn.close()
+
 
 with get_connection() as conn:
     cursor = conn.execute("PRAGMA table_info(financial_ratios)")
@@ -39,7 +38,8 @@ with get_connection() as conn:
 if __name__ == "__main__":
     with get_connection() as conn:
         print(pd.read_sql_query("PRAGMA table_info(profitandloss)", conn))
-        
+
+
 def _table_has_column(table, column):
     with get_connection() as conn:
         cols = [r[1] for r in conn.execute(f"PRAGMA table_info({table})").fetchall()]
@@ -80,23 +80,22 @@ def get_available_years():
 
     with get_connection() as conn:
         tables = pd.read_sql_query(
-            "SELECT name FROM sqlite_master WHERE type='table';",
-            conn
+            "SELECT name FROM sqlite_master WHERE type='table';", conn
         )
 
         if "market_cap" not in tables["name"].tolist():
             return [2024, 2023, 2022, 2021, 2020, 2019]
 
         df = pd.read_sql_query(
-            "SELECT DISTINCT year FROM market_cap ORDER BY year DESC",
-            conn
+            "SELECT DISTINCT year FROM market_cap ORDER BY year DESC", conn
         )
 
     if df.empty:
         return [2024, 2023, 2022, 2021, 2020, 2019]
 
     return df["year"].astype(int).tolist()
-   
+
+
 def _revenue_cagr(pnl_df, company_id, end_year, span=5):
     print("Columns:", pnl_df.columns.tolist())
     print(pnl_df.head())
@@ -129,7 +128,6 @@ def _revenue_cagr(pnl_df, company_id, end_year, span=5):
     return ((end_sales / start_sales) ** (1 / span) - 1) * 100
 
 
-
 def _roce_series(company_id):
     """Yearly ROCE% = operating_profit / capital_employed, where
     capital_employed = equity_capital + reserves + borrowings
@@ -138,7 +136,9 @@ def _roce_series(company_id):
     bs = _read_table("balancesheet")
     pnl_c = pnl[pnl["company_id"] == company_id][["year", "operating_profit"]]
     bs_c = bs[bs["company_id"] == company_id].copy()
-    bs_c["capital_employed"] = bs_c["equity_capital"] + bs_c["reserves"] + bs_c["borrowings"]
+    bs_c["capital_employed"] = (
+        bs_c["equity_capital"] + bs_c["reserves"] + bs_c["borrowings"]
+    )
     merged = pnl_c.merge(bs_c[["year", "capital_employed"]], on="year", how="inner")
     merged = merged[merged["capital_employed"] > 0]
     merged["roce"] = merged["operating_profit"] / merged["capital_employed"] * 100
@@ -149,6 +149,7 @@ def _roce_series(company_id):
 # HOME SCREEN QUERIES
 # ---------------------------------------------------------------------
 
+
 def get_home_kpis(year):
     try:
         fr = _read_table("financial_ratios")
@@ -156,14 +157,11 @@ def get_home_kpis(year):
 
         with get_connection() as conn:
             mc = pd.read_sql_query(
-                "SELECT * FROM market_cap WHERE year = ?",
-                conn,
-                params=(year,)
+                "SELECT * FROM market_cap WHERE year = ?", conn, params=(year,)
             )
 
             total_companies = pd.read_sql_query(
-                "SELECT COUNT(*) AS n FROM companies",
-                conn
+                "SELECT COUNT(*) AS n FROM companies", conn
             )["n"].iloc[0]
 
         return {
@@ -189,14 +187,17 @@ def get_home_kpis(year):
 
 def get_sector_breakdown():
     with get_connection() as conn:
-        df = pd.read_sql_query("""
+        df = pd.read_sql_query(
+            """
             SELECT
                 broad_sector AS sector,
                 COUNT(*) AS company_count
             FROM sectors
             GROUP BY broad_sector
             ORDER BY company_count DESC
-        """, conn)
+        """,
+            conn,
+        )
     return df
 
 
@@ -205,19 +206,25 @@ def get_top5_quality_companies(year):
     fr_y = fr[fr["year"] == year].copy()
 
     with get_connection() as conn:
-        companies = pd.read_sql_query("""
+        companies = pd.read_sql_query(
+            """
             SELECT
                 id AS company_id,
                 company_name
             FROM companies
-        """, conn)
+        """,
+            conn,
+        )
 
-        sectors = pd.read_sql_query("""
+        sectors = pd.read_sql_query(
+            """
             SELECT
                 company_id,
                 broad_sector AS sector
             FROM sectors
-        """, conn)
+        """,
+            conn,
+        )
 
     # Make sure company_id columns match
     fr_y["company_id"] = fr_y["company_id"].astype(str).str.strip()
@@ -230,30 +237,32 @@ def get_top5_quality_companies(year):
     if _table_has_column("financial_ratios", "composite_quality_score"):
         fr_y["quality_score"] = fr_y["composite_quality_score"]
     else:
+
         def norm(s):
             s = s.fillna(0)
             rng = s.max() - s.min()
             return (s - s.min()) / rng if rng else s * 0
 
         fr_y["quality_score"] = (
-            norm(fr_y["return_on_equity_pct"]) * 0.3 +
-            norm(fr_y["net_profit_margin_pct"]) * 0.3 +
-            norm(-fr_y["debt_to_equity"]) * 0.2 +
-            norm(fr_y["free_cash_flow_cr"]) * 0.2
+            norm(fr_y["return_on_equity_pct"]) * 0.3
+            + norm(fr_y["net_profit_margin_pct"]) * 0.3
+            + norm(-fr_y["debt_to_equity"]) * 0.2
+            + norm(fr_y["free_cash_flow_cr"]) * 0.2
         ) * 100
 
-    merged = (
-        fr_y.merge(companies, on="company_id", how="left")
-            .merge(sectors, on="company_id", how="left")
+    merged = fr_y.merge(companies, on="company_id", how="left").merge(
+        sectors, on="company_id", how="left"
     )
 
     top5 = merged.sort_values("quality_score", ascending=False).head(5)
 
     return top5[["company_name", "sector", "quality_score"]]
 
+
 # ---------------------------------------------------------------------
 # COMPANY PROFILE SCREEN QUERIES
 # ---------------------------------------------------------------------
+
 
 def search_companies(query):
     """List of (ticker, company_name) matching the search text."""
@@ -266,7 +275,8 @@ def search_companies(query):
             WHERE id LIKE ? OR company_name LIKE ?
             ORDER BY company_name
             """,
-            conn, params=(like, like),
+            conn,
+            params=(like, like),
         )
     return list(df.itertuples(index=False, name=None))
 
@@ -286,7 +296,8 @@ def get_company_card(ticker):
             LEFT JOIN sectors s ON s.company_id = c.id
             WHERE c.id = ?
             """,
-            conn, params=(ticker,),
+            conn,
+            params=(ticker,),
         )
     if df.empty:
         return None
@@ -337,28 +348,19 @@ def get_company_financials_10yr(ticker):
 
     df["year"] = pd.to_numeric(df["year"], errors="coerce")
 
-    return (
-        df.dropna(subset=["year"])
-          .sort_values("year")
-          .tail(10)
-    )
+    return df.dropna(subset=["year"]).sort_values("year").tail(10)
+
 
 def get_company_roe_roce_10yr(ticker):
     fr = _read_table("financial_ratios")
 
-    roe = (
-        fr[fr["company_id"] == ticker][
-            ["year", "return_on_equity_pct"]
-        ]
-        .rename(columns={"return_on_equity_pct": "roe"})
+    roe = fr[fr["company_id"] == ticker][["year", "return_on_equity_pct"]].rename(
+        columns={"return_on_equity_pct": "roe"}
     )
 
     roce = _roce_series(ticker)
 
-    df = (
-        roe.merge(roce, on="year", how="outer")
-           .sort_values("year")
-    )
+    df = roe.merge(roce, on="year", how="outer").sort_values("year")
 
     return df.dropna(subset=["year"]).tail(10)
 
@@ -372,7 +374,7 @@ def get_pros_cons(company_id):
             WHERE company_id = ?
             """,
             conn,
-            params=(company_id,)
+            params=(company_id,),
         )
 
     if df.empty:
@@ -383,14 +385,13 @@ def get_pros_cons(company_id):
 
     return pros, cons
 
+
 def get_screener_data(year):
     fr = _read_table("financial_ratios")
     fr = fr[fr["year"] == int(year)]
 
     with get_connection() as conn:
-        companies = pd.read_sql_query(
-            "SELECT id, company_name FROM companies", conn
-        )
+        companies = pd.read_sql_query("SELECT id, company_name FROM companies", conn)
 
         sectors = pd.read_sql_query(
             "SELECT company_id, broad_sector FROM sectors", conn
@@ -404,37 +405,47 @@ def get_screener_data(year):
 
     df = (
         fr.merge(companies, left_on="company_id", right_on="id", how="left")
-          .merge(sectors, on="company_id", how="left")
-          .merge(market, on=["company_id", "year"], how="left")
+        .merge(sectors, on="company_id", how="left")
+        .merge(market, on=["company_id", "year"], how="left")
     )
 
     return df.rename(columns={"broad_sector": "sector"})
+
+
 def get_peer_groups():
     with get_connection() as conn:
-        df = pd.read_sql_query("""
+        df = pd.read_sql_query(
+            """
         SELECT DISTINCT peer_group
         FROM peer_groups
         ORDER BY peer_group_name
-        """, conn)
+        """,
+            conn,
+        )
 
     return df["peer_group_name"].tolist()
+
+
 def get_peer_groups():
     with get_connection() as conn:
-        df = pd.read_sql_query("""
+        df = pd.read_sql_query(
+            """
             SELECT DISTINCT peer_group_name
             FROM peer_groups
             ORDER BY peer_group_name
-        """, conn)
+        """,
+            conn,
+        )
 
     return df["peer_group_name"].tolist()
+
+
 def get_peer_metrics(group, year):
     fr = _read_table("financial_ratios")
     fr = fr[fr["year"] == int(year)]
 
     with get_connection() as conn:
-        companies = pd.read_sql_query(
-            "SELECT id, company_name FROM companies", conn
-        )
+        companies = pd.read_sql_query("SELECT id, company_name FROM companies", conn)
 
         peers = pd.read_sql_query(
             "SELECT peer_group_name, company_id FROM peer_groups", conn
@@ -448,8 +459,8 @@ def get_peer_metrics(group, year):
 
     df = (
         peers.merge(companies, left_on="company_id", right_on="id")
-             .merge(fr, on="company_id")
-             .merge(market, on=["company_id", "year"], how="left")
+        .merge(fr, on="company_id")
+        .merge(market, on=["company_id", "year"], how="left")
     )
 
     df = df[df["peer_group_name"] == group]
@@ -471,16 +482,21 @@ def get_peer_metrics(group, year):
 # TREND ANALYSIS
 # =====================================================
 
+
 def get_company_list():
     with get_connection() as conn:
-        return pd.read_sql_query("""
+        return pd.read_sql_query(
+            """
             SELECT
                 id,
                 company_name
             FROM companies
             ORDER BY company_name
-        """, conn)
-    
+        """,
+            conn,
+        )
+
+
 def get_company_trends(company_id):
 
     pnl = _read_table("profitandloss")
@@ -490,48 +506,53 @@ def get_company_trends(company_id):
     print("FR Columns:", fr.columns.tolist())
 
     if "company_id" not in pnl.columns:
-        raise Exception(f"'company_id' not found in profitandloss table.\nColumns: {pnl.columns.tolist()}")
+        raise Exception(
+            f"'company_id' not found in profitandloss table.\nColumns: {pnl.columns.tolist()}"
+        )
 
     if "company_id" not in fr.columns:
-        raise Exception(f"'company_id' not found in financial_ratios table.\nColumns: {fr.columns.tolist()}")
+        raise Exception(
+            f"'company_id' not found in financial_ratios table.\nColumns: {fr.columns.tolist()}"
+        )
 
-    pnl = pnl[pnl["company_id"] == company_id][[
-        "year",
-        "sales",
-        "net_profit",
-        "eps"
-    ]]
+    pnl = pnl[pnl["company_id"] == company_id][["year", "sales", "net_profit", "eps"]]
 
-    fr = fr[fr["company_id"] == company_id][[
-        "year",
-        "return_on_equity_pct",
-        "net_profit_margin_pct",
-        "debt_to_equity",
-        "free_cash_flow_cr"
-    ]]
+    fr = fr[fr["company_id"] == company_id][
+        [
+            "year",
+            "return_on_equity_pct",
+            "net_profit_margin_pct",
+            "debt_to_equity",
+            "free_cash_flow_cr",
+        ]
+    ]
 
-    pnl = pnl.rename(columns={
-        "sales": "Revenue",
-        "net_profit": "Net Profit",
-        "eps": "EPS"
-    })
+    pnl = pnl.rename(
+        columns={"sales": "Revenue", "net_profit": "Net Profit", "eps": "EPS"}
+    )
 
-    fr = fr.rename(columns={
-        "return_on_equity_pct": "ROE",
-        "net_profit_margin_pct": "Net Margin",
-        "debt_to_equity": "Debt to Equity",
-        "free_cash_flow_cr": "Free Cash Flow"
-    })
+    fr = fr.rename(
+        columns={
+            "return_on_equity_pct": "ROE",
+            "net_profit_margin_pct": "Net Margin",
+            "debt_to_equity": "Debt to Equity",
+            "free_cash_flow_cr": "Free Cash Flow",
+        }
+    )
 
     return pnl.merge(fr, on="year", how="outer").sort_values("year")
 
+
 def get_sector_list():
     with get_connection() as conn:
-        df = pd.read_sql_query("""
+        df = pd.read_sql_query(
+            """
             SELECT DISTINCT broad_sector
             FROM sectors
             ORDER BY broad_sector
-        """, conn)
+        """,
+            conn,
+        )
 
     return df
 
@@ -577,11 +598,7 @@ def get_sector_data(sector):
         return df
 
     # Extract year
-    df["year"] = (
-        df["year"]
-        .astype(str)
-        .str.extract(r"(\d{4})")[0]
-    )
+    df["year"] = df["year"].astype(str).str.extract(r"(\d{4})")[0]
 
     df["year"] = pd.to_numeric(df["year"], errors="coerce")
 
@@ -596,11 +613,12 @@ def get_sector_data(sector):
     # Keep latest record of each company
     df = (
         df.sort_values("year")
-          .drop_duplicates(subset="company_name", keep="last")
-          .reset_index(drop=True)
+        .drop_duplicates(subset="company_name", keep="last")
+        .reset_index(drop=True)
     )
 
     return df
+
 
 def get_capital_data():
     with get_connection() as conn:
@@ -624,4 +642,3 @@ def get_capital_data():
             ON c.id = a.company_id
         """
         return pd.read_sql_query(query, conn)
-    

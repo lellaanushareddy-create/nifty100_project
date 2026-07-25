@@ -3,7 +3,6 @@ from pathlib import Path
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
-import matplotlib.pyplot as plt
 
 BASE = Path(__file__).resolve().parents[2]
 
@@ -26,11 +25,7 @@ valuation_df = pd.read_excel(valuation_file)
 ratios_df = pd.read_excel(ratios_file)
 growth_df = pd.read_excel(growth_file)
 # Keep only latest year's ratios
-ratios_df = (
-    ratios_df.sort_values("year")
-    .groupby("company_id", as_index=False)
-    .last()
-)
+ratios_df = ratios_df.sort_values("year").groupby("company_id", as_index=False).last()
 
 # Select required columns
 ratios_df = ratios_df[
@@ -50,17 +45,9 @@ growth_df = growth_df[
 ]
 
 # Merge all datasets
-cluster_df = valuation_df.merge(
-    ratios_df,
-    on="company_id",
-    how="left"
-)
+cluster_df = valuation_df.merge(ratios_df, on="company_id", how="left")
 
-cluster_df = cluster_df.merge(
-    growth_df,
-    on="company_id",
-    how="left"
-)
+cluster_df = cluster_df.merge(growth_df, on="company_id", how="left")
 
 print(cluster_df.shape)
 print(cluster_df.head())
@@ -78,14 +65,11 @@ cluster_data = cluster_df[features].copy()
 
 # Convert growth column to numeric
 cluster_data["compounded_sales_growth"] = (
-    cluster_data["compounded_sales_growth"]
-    .astype(str)
-    .str.extract(r"(\d+\.?\d*)")[0]
+    cluster_data["compounded_sales_growth"].astype(str).str.extract(r"(\d+\.?\d*)")[0]
 )
 
 cluster_data["compounded_sales_growth"] = pd.to_numeric(
-    cluster_data["compounded_sales_growth"],
-    errors="coerce"
+    cluster_data["compounded_sales_growth"], errors="coerce"
 )
 
 # Fill missing values
@@ -96,22 +80,13 @@ scaler = StandardScaler()
 scaled_data = scaler.fit_transform(cluster_data)
 
 # Apply KMeans clustering
-kmeans = KMeans(
-    n_clusters=4,
-    random_state=42,
-    n_init=10
-)
+kmeans = KMeans(n_clusters=4, random_state=42, n_init=10)
 
 cluster_df["cluster"] = kmeans.fit_predict(scaled_data)
 
 print(cluster_df[["company_id", "cluster"]].head())
 
-cluster_names = {
-    0: "Stable",
-    1: "Value",
-    2: "Growth",
-    3: "High Risk"
-}
+cluster_names = {0: "Stable", 1: "Value", 2: "Growth", 3: "High Risk"}
 
 cluster_df["cluster_name"] = cluster_df["cluster"].map(cluster_names)
 

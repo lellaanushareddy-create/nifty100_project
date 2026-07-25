@@ -1,6 +1,6 @@
 from pathlib import Path
+
 import pandas as pd
-import numpy as np
 
 # Project folders
 ROOT = Path(__file__).resolve().parents[2]
@@ -14,16 +14,13 @@ features = [
     "return_on_equity_pct",
     "debt_to_equity",
     "operating_profit_margin_pct",
-    "compounded_sales_growth"
+    "compounded_sales_growth",
 ]
 
 # Convert columns to numeric
 for feature in features:
     if feature in cluster_df.columns:
-        cluster_df[feature] = pd.to_numeric(
-            cluster_df[feature],
-            errors="coerce"
-        )
+        cluster_df[feature] = pd.to_numeric(cluster_df[feature], errors="coerce")
 
 # Fill missing broad_sector
 cluster_df["broad_sector"] = cluster_df["broad_sector"].fillna("Unknown")

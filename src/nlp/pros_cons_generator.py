@@ -1,5 +1,6 @@
-import pandas as pd
 from pathlib import Path
+
+import pandas as pd
 
 # ---------------------------------------
 # Project Paths
@@ -17,10 +18,10 @@ OUTPUT.mkdir(exist_ok=True)
 # ---------------------------------------
 
 financial = pd.read_excel(DATA / "financial_ratios.xlsx")
-profit = pd.read_excel(DATA / "profitandloss.xlsx",header=1)
-balance = pd.read_excel(DATA / "balancesheet.xlsx",header=1)
-cashflow = pd.read_excel(DATA / "cashflow.xlsx",header=1)
-companies = pd.read_excel(DATA / "companies.xlsx",header=1)
+profit = pd.read_excel(DATA / "profitandloss.xlsx", header=1)
+balance = pd.read_excel(DATA / "balancesheet.xlsx", header=1)
+cashflow = pd.read_excel(DATA / "cashflow.xlsx", header=1)
+companies = pd.read_excel(DATA / "companies.xlsx", header=1)
 
 print("Financial Columns:", financial.columns.tolist())
 print("Profit Columns:", profit.columns.tolist())
@@ -33,15 +34,19 @@ print("Cashflow Columns:", cashflow.columns.tolist())
 
 records = []
 
+
 def add_record(company_id, rule_type, rule_id, text, confidence):
     if confidence >= 60:
-        records.append({
-            "company_id": company_id,
-            "type": rule_type,
-            "rule_id": rule_id,
-            "text": text,
-            "confidence_pct": confidence
-        })
+        records.append(
+            {
+                "company_id": company_id,
+                "type": rule_type,
+                "rule_id": rule_id,
+                "text": text,
+                "confidence_pct": confidence,
+            }
+        )
+
 
 # Use March 2024 data (all companies)
 latest_year = "Mar 2024"
@@ -70,28 +75,22 @@ for _, row in latest.iterrows():
     company = row["company_id"]
 
     if row["net_profit_margin_pct"] >= 15:
-        add_record(company, "PRO", "P001",
-                   "Strong net profit margin", 95)
+        add_record(company, "PRO", "P001", "Strong net profit margin", 95)
 
     if row["return_on_equity_pct"] >= 15:
-        add_record(company, "PRO", "P002",
-                   "High Return on Equity", 95)
+        add_record(company, "PRO", "P002", "High Return on Equity", 95)
 
     if row["free_cash_flow_cr"] > 0:
-        add_record(company, "PRO", "P003",
-                   "Positive Free Cash Flow", 90)
+        add_record(company, "PRO", "P003", "Positive Free Cash Flow", 90)
 
     if row["asset_turnover"] >= 1:
-        add_record(company, "PRO", "P004",
-                   "Efficient asset utilization", 85)
+        add_record(company, "PRO", "P004", "Efficient asset utilization", 85)
 
     if row["operating_profit_margin_pct"] >= 15:
-        add_record(company, "PRO", "P005",
-                   "Healthy operating margin", 90)
+        add_record(company, "PRO", "P005", "Healthy operating margin", 90)
 
     if row["earnings_per_share"] > 0:
-        add_record(company, "PRO", "P006",
-                   "Positive Earnings Per Share", 80)
+        add_record(company, "PRO", "P006", "Positive Earnings Per Share", 80)
 
 # ---------------------------------------
 # Generate Cons
@@ -102,28 +101,22 @@ for _, row in latest.iterrows():
     company = row["company_id"]
 
     if row["net_profit_margin_pct"] < 5:
-        add_record(company, "CON", "C001",
-                   "Low profit margin", 90)
+        add_record(company, "CON", "C001", "Low profit margin", 90)
 
     if row["return_on_equity_pct"] < 10:
-        add_record(company, "CON", "C002",
-                   "Weak Return on Equity", 90)
+        add_record(company, "CON", "C002", "Weak Return on Equity", 90)
 
     if row["free_cash_flow_cr"] < 0:
-        add_record(company, "CON", "C003",
-                   "Negative Free Cash Flow", 95)
+        add_record(company, "CON", "C003", "Negative Free Cash Flow", 95)
 
     if row["asset_turnover"] < 0.5:
-        add_record(company, "CON", "C004",
-                   "Poor asset utilization", 85)
+        add_record(company, "CON", "C004", "Poor asset utilization", 85)
 
     if row["operating_profit_margin_pct"] < 10:
-        add_record(company, "CON", "C005",
-                   "Low operating margin", 90)
+        add_record(company, "CON", "C005", "Low operating margin", 90)
 
     if row["earnings_per_share"] < 0:
-        add_record(company, "CON", "C006",
-                   "Negative Earnings Per Share", 90)
+        add_record(company, "CON", "C006", "Negative Earnings Per Share", 90)
 
 # ---------------------------------------
 # Save Output
@@ -131,10 +124,7 @@ for _, row in latest.iterrows():
 
 pros_cons = pd.DataFrame(records)
 
-pros_cons.to_csv(
-    OUTPUT / "pros_cons_report.csv",
-    index=False
-)
+pros_cons.to_csv(OUTPUT / "pros_cons_report.csv", index=False)
 
 print()
 print("Generated Records:", len(pros_cons))
@@ -161,29 +151,24 @@ print("Total Records:", len(result))
 
 # Low Net Profit Margin
 if row["net_profit_margin_pct"] < 8:
-    add_record(company, "CON", "C001",
-               "Low net profit margin", 90)
+    add_record(company, "CON", "C001", "Low net profit margin", 90)
 
 # Low ROE
 if row["return_on_equity_pct"] < 12:
-    add_record(company, "CON", "C002",
-               "Low Return on Equity", 90)
+    add_record(company, "CON", "C002", "Low Return on Equity", 90)
 
 # Negative Free Cash Flow
 if row["free_cash_flow_cr"] < 0:
-    add_record(company, "CON", "C003",
-               "Negative Free Cash Flow", 95)
+    add_record(company, "CON", "C003", "Negative Free Cash Flow", 95)
 
 # High Debt
 if row["debt_to_equity"] > 1:
-    add_record(company, "CON", "C004",
-               "High Debt to Equity", 90)
+    add_record(company, "CON", "C004", "High Debt to Equity", 90)
 
 # Weak Operating Margin
 if row["operating_profit_margin_pct"] < 10:
-    add_record(company, "CON", "C005",
-               "Weak operating margin", 85)
-    
+    add_record(company, "CON", "C005", "Weak operating margin", 85)
+
 
 # ---------------------------------------
 # Generate Company Summary
@@ -205,14 +190,16 @@ for company_id in result["company_id"].unique():
     else:
         recommendation = "SELL"
 
-    summary.append({
-        "company_id": company_id,
-        "pros_count": len(pros),
-        "cons_count": len(cons),
-        "pros": "; ".join(pros),
-        "cons": "; ".join(cons),
-        "recommendation": recommendation
-    })
+    summary.append(
+        {
+            "company_id": company_id,
+            "pros_count": len(pros),
+            "cons_count": len(cons),
+            "pros": "; ".join(pros),
+            "cons": "; ".join(cons),
+            "recommendation": recommendation,
+        }
+    )
 
 summary_df = pd.DataFrame(summary)
 
@@ -221,4 +208,3 @@ summary_df.to_excel(OUTPUT / "company_summary.xlsx", index=False)
 
 print("\nCompany Summary Generated!")
 print(summary_df.head())
-
